@@ -97,15 +97,34 @@
                     <label id="selectedHorsesDetails" />
                 </hlayout>
                 <button id="addWinPlaceInfo" label="Enter Bet details" autodisable="self" />
-                <listbox id="downList" hflex="2">
+                <listbox id="combinationsListbox" hflex="2">
                     <auxhead>
-                        <auxheader colspan="3">Win/Place information</auxheader>
+                        <auxheader colspan="3">Race combinations</auxheader>
                     </auxhead>
                     <listhead>
-                        <listheader label="Number of Horses" />
-                        <listheader label="Win amount" />
+                        <listheader label="Combined races" />
+                        <listheader label="Win or Place" />
                         <listheader label="Bet amount" />
                     </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <!--<listcell>-->
+                            <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
+                            <!--</listcell>-->
+                            <listcell>
+                                <label value="${each.combinedElements}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.winPlace}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.betValue}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=horseListbox.onHorseDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
                 </listbox>
             </vlayout>
         </center>

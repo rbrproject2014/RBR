@@ -14,6 +14,7 @@ import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
+import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 import org.zkoss.zul.*;
 
@@ -51,6 +52,9 @@ public class chitEntryController extends SelectorComposer<Component>{
     Intbox winInput;
     @Wire
     Intbox placeInput;
+    @Wire
+    Listbox combinationsListbox;
+
 
 
     //data for the view
@@ -60,10 +64,12 @@ public class chitEntryController extends SelectorComposer<Component>{
     ListModelList<RaceDetail> listModelList;
     RaceDetail selectedRaceDetail;
 
+    ListModelList<ChitCombination> listModelListCombinations = new ListModelList<ChitCombination>();
+
     private Window win;
 
-    //services
-    ChitServiceImpl chitService = new ChitServiceImpl();
+    @WireVariable
+    ChitServiceImpl chitService;
 
     @WireVariable
     RaceService raceService;
@@ -109,6 +115,7 @@ public class chitEntryController extends SelectorComposer<Component>{
             System.out.println("Chit combination (P) Combined elements:" + selectedRaceDetails.size() + " Value:" + placeInput.intValue());
             addCombinationDetails(chitCombination, selectedRaceDetails);
             chit.addChitCombinatiion(chitCombination);
+            listModelListCombinations.add(chitCombination);
         }
 
         if(winInput.getValue()!=null){
@@ -121,12 +128,19 @@ public class chitEntryController extends SelectorComposer<Component>{
             System.out.println();
             addCombinationDetails(chitCombination, selectedRaceDetails);
             chit.addChitCombinatiion(chitCombination);
+            listModelListCombinations.add(chitCombination);
         }
+
+        combinationsListbox.setModel(listModelListCombinations);
 
         emptyHorseListbox.clearSelection();
         emptyHorseListbox.setFocus(true);
-
-        chitService.saveChit(chit);
+        Clients.showNotification("Chit combination added");
+//        chit.setChitCentreNo(new BigDecimal(1));
+//        chit.setChitSerialNo("AAA001");
+//        chit.setChitValue(new BigDecimal(100));
+//        chit.setChitDate(new Date());
+//        chitService.saveChit(chit);
 }
 
     private void addCombinationDetails(ChitCombination chitCombination,Set<Listitem> selectedRaceDetails){

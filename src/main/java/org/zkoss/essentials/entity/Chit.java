@@ -3,6 +3,7 @@ package org.zkoss.essentials.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,6 +38,7 @@ public class Chit implements Serializable {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "CHIT_DATE",nullable = false)
+    private Date chitDate;
 
 	//bi-directional many-to-one association to ChitCombination
 	@OneToMany(mappedBy="chit", fetch=FetchType.LAZY)
@@ -100,5 +102,12 @@ public class Chit implements Serializable {
 			chitCombination.setChit(this);
 		}
 	}
-	
+
+    public Date getChitDate() {
+        return chitDate;
+    }
+
+    public void setChitDate(Date chitDate) {
+        this.chitDate = chitDate;
+    }
 }

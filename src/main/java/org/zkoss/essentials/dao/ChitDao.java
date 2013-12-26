@@ -17,11 +17,14 @@ import java.util.List;
  * Time: 9:41 AM
  * To change this template use File | Settings | File Templates.
  */
-@Repository
+@Repository("chitDAO")
 public class ChitDao {
     @PersistenceContext
     private EntityManager em;
 
+    public ChitDao(){
+
+    }
     public List<Chit> queryAll(){
         Query query = em.createQuery("select o from Chit o");
         List<Chit> list = query.getResultList();
