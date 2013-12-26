@@ -1,0 +1,90 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<window apply="org.zkoss.essentials.chapter6.mvc.chitEntryController"
+        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto">
+    <caption src="/imgs/todo.png" sclass="fn-caption" label="Horse Details"/>
+    <borderlayout>
+        <center autoscroll="true" border="none">
+            <vlayout hflex="1" vflex="1">
+                <vbox align="east" hflex="1">
+                    <hbox >
+                        <combobox id="combo" placeholder="New horse name"/>
+                        <button id="addHorseBet" image="/imgs/plus.png" width="36px"/>
+                    </hbox>
+                </vbox>
+                <listbox id="horseListbox" vflex="1">
+                    <listhead>
+                        <!--<listheader width="30px" />-->
+                        <listheader/>
+                        <listheader hflex="min"/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <!--<listcell>-->
+                                <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
+                            <!--</listcell>-->
+                            <listcell>
+                                <label value="${each.displayName}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=horseListbox.onHorseDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+            </vlayout>
+        </center>
+        <east id="selectedHorseBlock" visible="false" width="300px" border="none" collapsible="false"
+              splittable="true" minsize="300" autoscroll="true">
+            <vlayout >
+                <hbox align="center"  hflex="1">
+                    <checkbox id="selectedHorseCheck"/>
+                    <textbox id="selectedHorseSubject" hflex="1" />
+                </hbox>
+                <grid hflex="1">
+                    <columns>
+                        <column align="right" hflex="min"/>
+                        <column/>
+                    </columns>
+                    <rows>
+                        <row>
+                            <cell sclass="row-title">Trainer :</cell>
+                            <cell><textbox id="selectedHorseTrainer" width="200px"/></cell>
+                        </row>
+                        <row>
+                            <cell sclass="row-title">Jockey :</cell>
+                            <cell><textbox id="selectedHorseJockey" width="200px"/></cell>
+                        </row>
+                        <row>
+                            <cell sclass="row-title">Horse Age :</cell>
+                            <cell><intbox id="selectedHorseAge" width="200px" format="#,##0" constraint="no negative: Age cannot be negative"/></cell>
+                        </row>
+                        <row>
+                            <cell sclass="row-title">Description :</cell>
+                            <cell>
+                                <textbox id="selectedHorseDescription" multiline="true" hflex="1" height="200px" context="editPopup"/>
+                            </cell>
+                        </row>
+                    </rows>
+                </grid>
+                <menupopup id="editPopup">
+                    <menuitem label="ClearAll" onClick="selectedHorseDescription.value=null" />
+                    <menu label="QuickText">
+                        <menupopup>
+                            <menuitem label="Maiden Horse! Yet to win a race"
+                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
+                            <menuitem label="Claimed Horse!"
+                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
+                            <menuitem label="Allowanced Horse!"
+                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
+                            <menuitem label="Stake Horse! This is a top class horse"
+                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
+                        </menupopup>
+                    </menu>
+                </menupopup>
+                <hlayout>
+                    <button id="updateSelectedHorse" label="Update"/>
+                </hlayout>
+            </vlayout>
+        </east>
+    </borderlayout>
+</window>

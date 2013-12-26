@@ -1,0 +1,101 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<window apply="org.zkoss.essentials.chapter6.mvc.chitEntryController"
+        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto">
+    <caption src="/imgs/todo.png" sclass="fn-caption" label="Bet Information"/>
+    <borderlayout>
+        <center autoscroll="true" border="none">
+            <vlayout hflex="1" vflex="1">
+                <vbox align="east" hflex="1">
+                    <grid>
+                        <columns>
+                            <column label="Type" width="120px" />
+                            <column label="Content" />
+                        </columns>
+                        <rows>
+                            <row>
+                                Chit Centre Number:
+                                <cell>
+                                    <intbox value="@bind(fx.age)" width="150px"  tabindex="4" />
+                                    <label class="error"
+                                           value="@load(vmsgs['age'])" />
+                                </cell>
+                            </row>
+                            <row>
+                                Chit Serial Number:
+                                <cell>
+                                    <intbox value="@bind(fx.age)" width="150px"  tabindex="4" />
+                                    <label class="error"
+                                           value="@load(vmsgs['age'])" />
+                                </cell>
+                            </row>
+                            <row>
+                                Chit Value:
+                                <cell>
+                                    <intbox value="@bind(fx.age)" width="150px"  tabindex="4" />
+                                    <label class="error"
+                                           value="@load(vmsgs['age'])" />
+                                </cell>
+                            </row>
+                        </rows>
+                    </grid>
+                    <hbox>
+                        <combobox id="combo" autodrop="true" placeholder="Type horse name"/>
+                        <button id="addHorseBet" image="/imgs/plus.png" width="36px"/>
+                    </hbox>
+                    <hbox>
+                        <checkbox checked="true"
+                                  onCheck="combo.autodrop = self.checked"
+                                  label="Auto drop horse name when typing" />
+                    </hbox>
+                </vbox>
+                <listbox id="emptyHorseListbox" checkmark="true" multiple="true">
+                    <auxhead>
+                        <auxheader>Race details for the Chit</auxheader>
+                    </auxhead>
+                    <listhead>
+                        <listheader label="Select All"/>
+                        <listheader/>
+                        <listheader/>
+                        <listheader/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <!--<listcell>-->
+                            <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
+                            <!--</listcell>-->
+                            <listcell>
+                                <label value="${each.horseId}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.jockey}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.trainer}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=horseListbox.onHorseDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+                <hlayout sclass="selected-area">
+                    <label id="selectedText" />
+                </hlayout>
+                <hlayout sclass="selected-area">
+                    <label id="selectedHorsesDetails" />
+                </hlayout>
+                <button id="addWinPlaceInfo" label="Enter Bet details" autodisable="self" />
+                <listbox id="downList" hflex="2">
+                    <auxhead>
+                        <auxheader colspan="3">Win/Place information</auxheader>
+                    </auxhead>
+                    <listhead>
+                        <listheader label="Number of Horses" />
+                        <listheader label="Win amount" />
+                        <listheader label="Bet amount" />
+                    </listhead>
+                </listbox>
+            </vlayout>
+        </center>
+    </borderlayout>
+</window>

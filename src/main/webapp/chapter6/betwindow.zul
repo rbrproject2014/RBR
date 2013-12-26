@@ -1,0 +1,44 @@
+<window id="modalDialog" title="Place bet" border="normal" width="460px"
+        apply="org.zkoss.essentials.chapter6.mvc.chitEntryController"
+        position="center,center" closable="true"
+        action="show: slideDown;hide: slideUp">
+
+    <vlayout>
+        <grid>
+            <columns>
+                <column hflex="1" label="Win" align="center"/>
+                <column hflex="2" label="Place" align="center" />
+            </columns>
+            <rows>
+                <row>
+                    <cell><intbox id="winInput" format="#,##0" constraint="no negative: Win bet amount cannot be negative"/></cell>
+                    <cell><intbox id="PlaceInput" format="#,##0" constraint="no negative: Place bet amount cannot be negative"/></cell>
+                </row>
+            </rows>
+        </grid>
+        <listbox id="selectedHorseListbox" checkmark="false">
+            <auxhead>
+                <auxheader>Horse information for the Chit</auxheader>
+            </auxhead>
+            <listhead>
+                <listheader label="Select All"/>
+                <!--<listheader/>-->
+                <!--<listheader hflex="min"/>-->
+            </listhead>
+            <template name="model">
+                <listitem sclass="selected-area" value="${each}">
+                    <!--<listcell>-->
+                    <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
+                    <!--</listcell>-->
+                    <listcell>
+                        <label value="${each.displayName}"/>
+                    </listcell>
+                    <!--<listcell>-->
+                    <!--<button forward="onClick=horseListbox.onHorseDelete" image="/imgs/cross.png" width="36px"/>-->
+                    <!--</listcell>-->
+                </listitem>
+            </template>
+        </listbox>
+        <button id="popupSaveButton" hflex="1" label="Save"/>
+    </vlayout>
+</window>

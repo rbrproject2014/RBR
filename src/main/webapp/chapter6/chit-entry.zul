@@ -1,0 +1,40 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<window title="Chit Entry" width="1024px" border="normal"
+        apply="org.zkoss.essentials.chapter6.mvc.chitEntryController">
+    <caption src="/imgs/todo.png" sclass="fn-caption" label="Chit Entry"/>
+    <borderlayout>
+        <center autoscroll="true" border="none">
+            <vlayout hflex="1" vflex="1">
+                <hbox align="center" hflex="1" sclass="todo-box">
+                    <combobox id="raceDetail" autocomplete="true" autodrop="true" buttonVisible="true"/>
+                    <textbox id="todoSubject" hflex="1" placeholder="What needs to be done?" />
+                    <button id="addTodo" image="/imgs/plus.png" width="36px"/>
+                </hbox>
+                <listbox id="todoListbox" vflex="1">
+                    <listhead>
+                        <listheader  width="30px" />
+                        <listheader/>
+                        <listheader hflex="min"/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="${each.complete?'complete-todo':''}" value="${each}">
+                            <listcell>
+                                <checkbox forward="onCheck=todoListbox.onTodoCheck" checked="${each.complete}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.subject}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=todoListbox.onTodoDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+            </vlayout>
+        </center>
+
+    </borderlayout>
+</window>

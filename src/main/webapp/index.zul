@@ -1,0 +1,20 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<zk>
+    <borderlayout hflex="1" vflex="1">
+        <north height="100px" border="none" >
+            <include src="/chapter3/banner.zul"/>
+        </north>
+        <center id="mainContent" autoscroll="true">
+            <vbox vflex="1" hflex="1" align="center" spacing="20px"  sclass="demo-main">
+
+                <label value="Race by Race" sclass="head2"/>
+                <hlayout>
+                    <a href="/chapter6/index.zul">Enter</a>
+                </hlayout>
+            </vbox>
+        </center>
+        <south height="50px" border="none">
+            <include src="/chapter3/footer.zul"/>
+        </south>
+    </borderlayout>
+</zk>
