@@ -6,38 +6,38 @@
         <center autoscroll="true" border="none">
             <vlayout hflex="1" vflex="1">
                 <vbox align="east" hflex="1">
-                    <grid>
-                        <columns>
-                            <column label="Type" width="120px" />
-                            <column label="Content" />
-                        </columns>
-                        <rows>
-                            <row>
-                                Chit Centre Number:
-                                <cell>
-                                    <intbox value="@bind(fx.age)" width="150px"  tabindex="4" />
-                                    <label class="error"
-                                           value="@load(vmsgs['age'])" />
-                                </cell>
-                            </row>
-                            <row>
-                                Chit Serial Number:
-                                <cell>
-                                    <intbox value="@bind(fx.age)" width="150px"  tabindex="4" />
-                                    <label class="error"
-                                           value="@load(vmsgs['age'])" />
-                                </cell>
-                            </row>
-                            <row>
-                                Chit Value:
-                                <cell>
-                                    <intbox value="@bind(fx.age)" width="150px"  tabindex="4" />
-                                    <label class="error"
-                                           value="@load(vmsgs['age'])" />
-                                </cell>
-                            </row>
-                        </rows>
-                    </grid>
+                    <!--<grid>-->
+                        <!--<columns>-->
+                            <!--<column label="Type" width="120px" />-->
+                            <!--<column label="Content" />-->
+                        <!--</columns>-->
+                        <!--<rows>-->
+                            <!--<row>-->
+                                <!--Chit Centre Number:-->
+                                <!--<cell>-->
+                                    <!--<intbox value="@bind(fx.age)" width="150px"  tabindex="4" />-->
+                                    <!--<label class="error"-->
+                                           <!--value="@load(vmsgs['age'])" />-->
+                                <!--</cell>-->
+                            <!--</row>-->
+                            <!--<row>-->
+                                <!--Chit Serial Number:-->
+                                <!--<cell>-->
+                                    <!--<intbox value="@bind(fx.age)" width="150px"  tabindex="4" />-->
+                                    <!--<label class="error"-->
+                                           <!--value="@load(vmsgs['age'])" />-->
+                                <!--</cell>-->
+                            <!--</row>-->
+                            <!--<row>-->
+                                <!--Chit Value:-->
+                                <!--<cell>-->
+                                    <!--<intbox value="@bind(fx.age)" width="150px"  tabindex="4" />-->
+                                    <!--<label class="error"-->
+                                           <!--value="@load(vmsgs['age'])" />-->
+                                <!--</cell>-->
+                            <!--</row>-->
+                        <!--</rows>-->
+                    <!--</grid>-->
                     <hbox>
                         <combobox id="combo" autodrop="true" placeholder="Type horse name"/>
                         <button id="addHorseBet" image="/imgs/plus.png" width="36px"/>
@@ -48,9 +48,9 @@
                                   label="Auto drop horse name when typing" />
                     </hbox>
                 </vbox>
-                <listbox id="emptyHorseListbox" checkmark="true" multiple="true">
+                <listbox id="emptyHorseListbox" checkmark="true" multiple="true" onOK="winInput.focus();">
                     <auxhead>
-                        <auxheader>Race details for the Chit</auxheader>
+                        <auxheader>Race details for the Chit1</auxheader>
                     </auxhead>
                     <listhead>
                         <listheader label="Select All"/>
@@ -81,6 +81,18 @@
                 <hlayout sclass="selected-area">
                     <label id="selectedText" />
                 </hlayout>
+                <grid>
+                    <columns>
+                        <column hflex="1" label="Win" align="center"/>
+                        <column hflex="2" label="Place" align="center" />
+                    </columns>
+                    <rows>
+                        <row>
+                            <cell><intbox id="winInput" format="#,##0" constraint="no negative: Win bet amount cannot be negative" onOK="placeInput.focus();"/></cell>
+                            <cell><intbox id="placeInput" format="#,##0" constraint="no negative: Place bet amount cannot be negative"/></cell>
+                        </row>
+                    </rows>
+                </grid>
                 <hlayout sclass="selected-area">
                     <label id="selectedHorsesDetails" />
                 </hlayout>

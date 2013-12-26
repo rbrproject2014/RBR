@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -60,6 +61,7 @@ public class Race implements Serializable {
 	private Set<RaceDetail> raceDetails;
 
     public Race() {
+        raceDetails = new HashSet<RaceDetail>();
     }
 
 	public long getRaceSerialNo() {

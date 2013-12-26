@@ -1,6 +1,5 @@
 package org.zkoss.essentials.chapter6.mvc;
 
-import org.zkoss.essentials.dao.ChitDao;
 import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
@@ -48,6 +47,12 @@ public class chitEntryController extends SelectorComposer<Component>{
     @Wire
     Window modalDialog;
 
+    @Wire
+    Intbox winInput;
+    @Wire
+    Intbox placeInput;
+
+
     //data for the view
     List<RaceDetail> raceDetails = new ArrayList<RaceDetail>();
     ListModelList<RaceDetail> blankHorseListModel;
@@ -92,29 +97,46 @@ public class chitEntryController extends SelectorComposer<Component>{
         //System.out.println("33333333333333333333333333333>>>>>>>>>>>>>>>>>>>>");
     }
 
+    @Listen("onClick = #addWinPlaceInfo; onOK = #placeInput")
     public void addCombination(){
 
         Set<Listitem> selectedRaceDetails = emptyHorseListbox.getSelectedItems();
-        ChitCombination chitCombination = new ChitCombination();
-        chitCombination.setCombinedElements(new BigDecimal(selectedRaceDetails.size()));
-        chitCombination.setBetValue(new BigDecimal(100));
-        chitCombination.setWinPlace("P");
-        // two entries for chit combination for W and P
+        if(placeInput.getValue()!=null){
+            ChitCombination chitCombination = new ChitCombination();
+            chitCombination.setCombinedElements(new BigDecimal(selectedRaceDetails.size()));
+            chitCombination.setBetValue(new BigDecimal(placeInput.intValue()));
+            chitCombination.setWinPlace("P");
+            System.out.println("Chit combination (P) Combined elements:" + selectedRaceDetails.size() + " Value:" + placeInput.intValue());
+            addCombinationDetails(chitCombination, selectedRaceDetails);
+            chit.addChitCombinatiion(chitCombination);
+        }
 
+        if(winInput.getValue()!=null){
+            ChitCombination chitCombination = new ChitCombination();
+            chitCombination.setCombinedElements(new BigDecimal(selectedRaceDetails.size()));
+            chitCombination.setBetValue(new BigDecimal(winInput.intValue()));
+            chitCombination.setWinPlace("W");
+            System.out.println("Chit combination (W) Combined elements:" + selectedRaceDetails.size() + " Value:" + winInput.intValue());
+            System.out.println();
+            System.out.println();
+            addCombinationDetails(chitCombination, selectedRaceDetails);
+            chit.addChitCombinatiion(chitCombination);
+        }
+
+        emptyHorseListbox.clearSelection();
+        emptyHorseListbox.setFocus(true);
+
+        chitService.saveChit(chit);
+}
+
+    private void addCombinationDetails(ChitCombination chitCombination,Set<Listitem> selectedRaceDetails){
         Iterator<Listitem> iterator = selectedRaceDetails.iterator();
         while(iterator.hasNext()){
             RaceDetail raceDetail = iterator.next().getValue();
+            System.out.println("Combination detail Race detail:"+raceDetail.getHorseId());
             ChitCombinationDetail chitCombinationDetail = new ChitCombinationDetail(raceDetail);
             chitCombination.addCombinationDetail(chitCombinationDetail);
         }
-
-        chit.addChitCombinatiion(chitCombination);
-
-
-
-
-
-
     }
 
     public void saveChit(){
@@ -128,7 +150,7 @@ public class chitEntryController extends SelectorComposer<Component>{
     public void addRaceDetailClickOREnter(){
         System.out.println("Clicked...");
 
-        if (combo!=null) {   // not working redo
+        if (combo.getSelectedItem()!=null) {   // not working redo
             RaceDetail raceDetail = combo.getSelectedItem().getValue();
             System.out.println(">>>>>>>>> Horse ID:"+raceDetail.getHorseId());
             raceDetails.add(raceDetail);
@@ -136,32 +158,19 @@ public class chitEntryController extends SelectorComposer<Component>{
             listModelList.setMultiple(true);
             emptyHorseListbox.setModel(listModelList);
             combo.setValue("");
+        }else if(emptyHorseListbox.getModel().getSize()>0){
+            emptyHorseListbox.setFocus(true);
         }
     }
 
     //when user selects the check box of Race Detail list
     @Listen("onSelect = #emptyHorseListbox")
     public void raceDetailSelectCheckBox() {
-        System.out.println("Inside raceDetailSelectCheckBox");
-        if(listModelList.isSelectionEmpty()){
-            System.out.println("Selected list is empty :(");
-            //just in case for the no selection
-            selectedRaceDetail = null;
-            selectedText.setValue("0 horse(s) selected");
-        }else{
-            System.out.println("Selected list is not empty :)))");
-            selectedHorseListModel.clear();
-            for (int i=0; i<emptyHorseListbox.getSelectedItems().size(); i++) {
-                selectedRaceDetail = listModelList.getSelection().iterator().next();
-                selectedHorseListModel.add(selectedRaceDetail);
-                System.out.println("inside not empty: HorseID/Jockey/Trainer >>>>> " + selectedRaceDetail.getHorseId()+"/"+selectedRaceDetail.getJockey()+"/"+selectedRaceDetail.getTrainer());
-            }
-            selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
-        }
+       selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
     }
 
     //when user clicks the palce bet button
-    @Listen("onClick = #addWinPlaceInfo")
+//    @Listen("onClick = #addWinPlaceInfo")
     public void doAddWinPlaceClick() {
         //Set<Listitem> selectedList = horseListbox.getSelectedItems();
         Set<Listitem> selectedList = emptyHorseListbox.getSelectedItems();
@@ -178,7 +187,7 @@ public class chitEntryController extends SelectorComposer<Component>{
     @Listen("onClick = #popupSaveButton")
     public void showModal1(Event e) {
           Intbox ibWin = (Intbox) modalDialog.getFellow("winInput");
-          Intbox ibPlc = (Intbox) modalDialog.getFellow("PlaceInput");
+          Intbox ibPlc = (Intbox) modalDialog.getFellow("placeInput");
           iWinAmount = ibWin.getValue();
           iPlaceAmount = ibPlc.getValue();
           System.out.println(" --------- Win Amount: "+iWinAmount);

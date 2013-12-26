@@ -3,6 +3,7 @@ package org.zkoss.essentials.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -44,6 +45,7 @@ public class ChitCombination implements Serializable {
 	private Set<ChitCombinationDetail> chitCombinationDetails;
 
     public ChitCombination() {
+        chitCombinationDetails = new HashSet<ChitCombinationDetail>();
     }
 
 	public long getId() {

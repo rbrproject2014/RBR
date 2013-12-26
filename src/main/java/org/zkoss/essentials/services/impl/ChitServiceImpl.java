@@ -13,9 +13,7 @@ import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
 import org.zkoss.essentials.services.ChitService;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,8 +32,6 @@ public class ChitServiceImpl implements ChitService {
     ChitCombinationDao chitCombinationDao;
     @Autowired
     ChitCombinationDetailDao chitCombinationDetailDao;
-
-    static List<ChitCombinationDetail> ChitCombDetList = new ArrayList<ChitCombinationDetail>();
 
     @Override
     @Transactional

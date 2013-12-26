@@ -1,5 +1,7 @@
 package org.zkoss.essentials.dao;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
@@ -16,7 +18,8 @@ import java.util.List;
  * Time: 9:57 AM
  * To change this template use File | Settings | File Templates.
  */
-@Repository
+@Repository("chitCombinationDao")
+@Scope(value="singleton",proxyMode= ScopedProxyMode.TARGET_CLASS)
 public class ChitCombinationDao {
     @PersistenceContext
     private EntityManager em;
