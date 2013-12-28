@@ -86,27 +86,29 @@ public class chitEntryController extends SelectorComposer<Component>{
 
     @Override
     public void doAfterCompose(Component comp) throws Exception{
-        //System.out.println("11111111111111111111111111111>>>>>>>>>>>>>>>>>>>>");
         super.doAfterCompose(comp);
         blankHorseListModel = new ListModelList<RaceDetail>();
         blankHorseListModel.setMultiple(true);
-
         selectedHorseListModel = new ListModelList<RaceDetail>();
         selectedHorseListModel.setMultiple(true);
-
-        //System.out.println("22222222222222222222222222222>>>>>>>>>>>>>>>>>>>>");
         System.out.println(raceService==null?"Raceservice null":"RaceService not null");
         if (combo!=null) {
             combo.setModel(new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date())));
         }
-
-        //System.out.println("33333333333333333333333333333>>>>>>>>>>>>>>>>>>>>");
     }
 
+    /*
+    * After entering value in the place input value OR
+    * upon pressing the addWindPlaceInfo button,
+    * process chit combination information
+    * Two separate records will be added per combination,
+    * one for Win value and one for Place value
+    * */
     @Listen("onClick = #addWinPlaceInfo; onOK = #placeInput")
-    public void addCombination(){
+    public void processChitCombination(){
 
         Set<Listitem> selectedRaceDetails = emptyHorseListbox.getSelectedItems();
+
         if(placeInput.getValue()!=null){
             ChitCombination chitCombination = new ChitCombination();
             chitCombination.setCombinedElements(new BigDecimal(selectedRaceDetails.size()));
@@ -124,8 +126,6 @@ public class chitEntryController extends SelectorComposer<Component>{
             chitCombination.setBetValue(new BigDecimal(winInput.intValue()));
             chitCombination.setWinPlace("W");
             System.out.println("Chit combination (W) Combined elements:" + selectedRaceDetails.size() + " Value:" + winInput.intValue());
-            System.out.println();
-            System.out.println();
             addCombinationDetails(chitCombination, selectedRaceDetails);
             chit.addChitCombinatiion(chitCombination);
             listModelListCombinations.add(chitCombination);
@@ -134,6 +134,8 @@ public class chitEntryController extends SelectorComposer<Component>{
         combinationsListbox.setModel(listModelListCombinations);
 
         emptyHorseListbox.clearSelection();
+        winInput.setValue(null);
+        placeInput.setValue(null);
         emptyHorseListbox.setFocus(true);
         Clients.showNotification("Chit combination added");
 //        chit.setChitCentreNo(new BigDecimal(1));
@@ -185,28 +187,28 @@ public class chitEntryController extends SelectorComposer<Component>{
 
     //when user clicks the palce bet button
 //    @Listen("onClick = #addWinPlaceInfo")
-    public void doAddWinPlaceClick() {
-        //Set<Listitem> selectedList = horseListbox.getSelectedItems();
-        Set<Listitem> selectedList = emptyHorseListbox.getSelectedItems();
-        if (selectedList.isEmpty()) {
-            alert("Please select at least one Race Detail to enter bet information");
-            return;
-        }
-        //System.out.println(selectedHorseListModel.isEmpty()?"selectedHorseListModel is empty":"-- not empty -- ");
-        //selectedHorseListbox.setModel(selectedHorseListModel);
-        final Window dialog = (Window) Executions.createComponents("betwindow.zul", win, null);
-        dialog.doModal();
-    }
+//    public void doAddWinPlaceClick() {
+//        //Set<Listitem> selectedList = horseListbox.getSelectedItems();
+//        Set<Listitem> selectedList = emptyHorseListbox.getSelectedItems();
+//        if (selectedList.isEmpty()) {
+//            alert("Please select at least one Race Detail to enter bet information");
+//            return;
+//        }
+//        //System.out.println(selectedHorseListModel.isEmpty()?"selectedHorseListModel is empty":"-- not empty -- ");
+//        //selectedHorseListbox.setModel(selectedHorseListModel);
+//        final Window dialog = (Window) Executions.createComponents("betwindow.zul", win, null);
+//        dialog.doModal();
+//    }
 
-    @Listen("onClick = #popupSaveButton")
-    public void showModal1(Event e) {
-          Intbox ibWin = (Intbox) modalDialog.getFellow("winInput");
-          Intbox ibPlc = (Intbox) modalDialog.getFellow("placeInput");
-          iWinAmount = ibWin.getValue();
-          iPlaceAmount = ibPlc.getValue();
-          System.out.println(" --------- Win Amount: "+iWinAmount);
-          System.out.println(" --------- Place Amount: "+iPlaceAmount);
-          System.out.println(" --------- BetSize: ");        //error here
-          modalDialog.detach();
-    }
+//    @Listen("onClick = #popupSaveButton")
+//    public void showModal1(Event e) {
+//          Intbox ibWin = (Intbox) modalDialog.getFellow("winInput");
+//          Intbox ibPlc = (Intbox) modalDialog.getFellow("placeInput");
+//          iWinAmount = ibWin.getValue();
+//          iPlaceAmount = ibPlc.getValue();
+//          System.out.println(" --------- Win Amount: "+iWinAmount);
+//          System.out.println(" --------- Place Amount: "+iPlaceAmount);
+//          System.out.println(" --------- BetSize: ");        //error here
+//          modalDialog.detach();
+//    }
 }
