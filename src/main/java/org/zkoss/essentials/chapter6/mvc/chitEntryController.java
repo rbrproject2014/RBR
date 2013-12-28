@@ -173,6 +173,7 @@ public class chitEntryController extends SelectorComposer<Component>{
             listModelList = new ListModelList<RaceDetail>(raceDetails);
             listModelList.setMultiple(true);
             emptyHorseListbox.setModel(listModelList);
+            combo.removeItemAt(combo.getSelectedIndex());
             combo.setValue("");
         }else if(emptyHorseListbox.getModel().getSize()>0){
             emptyHorseListbox.setFocus(true);
