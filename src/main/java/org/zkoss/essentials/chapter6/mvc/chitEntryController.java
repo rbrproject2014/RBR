@@ -4,11 +4,13 @@ import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
 import org.zkoss.essentials.entity.RaceDetail;
+import org.zkoss.essentials.services.ChitService;
 import org.zkoss.essentials.services.RaceService;
 import org.zkoss.essentials.services.impl.ChitServiceImpl;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
-import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.*;
+import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
@@ -49,9 +51,21 @@ public class chitEntryController extends SelectorComposer<Component>{
     Window modalDialog;
 
     @Wire
+    Button newChit;
+    @Wire
+    Button saveChit;
+
+    @Wire
     Intbox winInput;
     @Wire
     Intbox placeInput;
+    @Wire
+    Intbox serialNumberInput;
+    @Wire
+    Intbox centreNumberInput;
+    @Wire
+    Intbox chitValueInput;
+
     @Wire
     Listbox combinationsListbox;
 
@@ -63,26 +77,17 @@ public class chitEntryController extends SelectorComposer<Component>{
     ListModelList<RaceDetail> selectedHorseListModel;
     ListModelList<RaceDetail> listModelList;
     RaceDetail selectedRaceDetail;
+    private boolean chitSaved = false;
 
     ListModelList<ChitCombination> listModelListCombinations = new ListModelList<ChitCombination>();
 
     private Window win;
 
     @WireVariable
-    ChitServiceImpl chitService;
+    ChitService chitService;
 
     @WireVariable
     RaceService raceService;
-
-
-
-    public void init(){
-
-        chit.setChitCentreNo(new BigDecimal(252362462));
-        chit.setChitSerialNo("35273517");
-        chit.setChitValue(new BigDecimal(230));
-
-    }
 
     @Override
     public void doAfterCompose(Component comp) throws Exception{
@@ -95,6 +100,9 @@ public class chitEntryController extends SelectorComposer<Component>{
         if (combo!=null) {
             combo.setModel(new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date())));
         }
+
+        newChit.setDisabled(true);
+        saveChit.setDisabled(true);
     }
 
     /*
@@ -136,13 +144,12 @@ public class chitEntryController extends SelectorComposer<Component>{
         emptyHorseListbox.clearSelection();
         winInput.setValue(null);
         placeInput.setValue(null);
+        selectedText.setValue("");
         emptyHorseListbox.setFocus(true);
-        Clients.showNotification("Chit combination added");
-//        chit.setChitCentreNo(new BigDecimal(1));
-//        chit.setChitSerialNo("AAA001");
-//        chit.setChitValue(new BigDecimal(100));
-//        chit.setChitDate(new Date());
-//        chitService.saveChit(chit);
+
+        newChit.setDisabled(false);
+        saveChit.setDisabled(false);
+        Clients.showNotification("Chit combination added",null,null,null,2000);
 }
 
     private void addCombinationDetails(ChitCombination chitCombination,Set<Listitem> selectedRaceDetails){
@@ -155,18 +162,15 @@ public class chitEntryController extends SelectorComposer<Component>{
         }
     }
 
-    public void saveChit(){
-
-        ChitServiceImpl chitServiceImpl = new ChitServiceImpl();
-        chitServiceImpl.saveChit(chit);
-    }
 
     //when user click Add(plus) sign of race detail or upon pressing enter
     @Listen("onClick = #addHorseBet; onOK = #combo")
     public void addRaceDetailClickOREnter(){
         System.out.println("Clicked...");
 
-        if (combo.getSelectedItem()!=null) {   // not working redo
+        System.out.println(emptyHorseListbox.getModel()!=null?"list box is not null":"list box is null");
+
+        if (combo.getSelectedItem()!=null) {
             RaceDetail raceDetail = combo.getSelectedItem().getValue();
             System.out.println(">>>>>>>>> Horse ID:"+raceDetail.getHorseId());
             raceDetails.add(raceDetail);
@@ -175,6 +179,8 @@ public class chitEntryController extends SelectorComposer<Component>{
             emptyHorseListbox.setModel(listModelList);
             combo.removeItemAt(combo.getSelectedIndex());
             combo.setValue("");
+//        }else if (combo.getSelectedItem()==null){
+//            Clients.showNotification("Race detail entered does not exist");
         }else if(emptyHorseListbox.getModel().getSize()>0){
             emptyHorseListbox.setFocus(true);
         }
@@ -212,4 +218,51 @@ public class chitEntryController extends SelectorComposer<Component>{
 //          System.out.println(" --------- BetSize: ");        //error here
 //          modalDialog.detach();
 //    }
+
+
+    //when user clicks the delete button of each race detail on the list
+    @Listen("onHorseDelete = #emptyHorseListbox")
+    public void doChitCombinationDetailDelete(ForwardEvent evt){
+        Button btn = (Button)evt.getOrigin().getTarget();
+        Listitem listitem = (Listitem)btn.getParent().getParent();
+
+        RaceDetail raceDetail = listitem.getValue();
+        raceDetails.remove(raceDetail);
+        listModelList = new ListModelList<RaceDetail>(raceDetails);
+        listModelList.setMultiple(true);
+        emptyHorseListbox.setModel(listModelList);
+        System.out.println(">>>>>>>>> Horse ID to remove:"+raceDetail.getHorseId());
+
+    }
+
+    @Listen("onClick = #saveChit")
+    public void saveChit(){
+        chit.setChitCentreNo(new BigDecimal(centreNumberInput.getValue()));
+        chit.setChitSerialNo(serialNumberInput.getValue().toString());
+        chit.setChitValue(new BigDecimal(chitValueInput.getValue()));
+        chit.setChitDate(new Date());
+        chitService.saveChit(chit);
+        saveChit.setDisabled(true);
+        chitSaved = true;
+        Clients.showNotification("Chit successfully saved ",null,null,null,2000);
+
+    }
+
+    @Listen("onClick = #newChit")
+    public void newChit(){
+        if (!chitSaved) {
+            Messagebox.show("Current chit is not saved. Are you sure you want to discard it?",new Messagebox.Button[]{Messagebox.Button.YES, Messagebox.Button.NO},new EventListener<Messagebox.ClickEvent>() {
+                @Override
+                public void onEvent(Messagebox.ClickEvent clickEvent) throws Exception {
+                    if(Messagebox.ON_YES == clickEvent.getName()){
+                        Executions.sendRedirect("/chapter6/indexChit.zul");
+                    }
+                }
+            });
+        }
+        else{
+            Executions.sendRedirect("/chapter6/indexChit.zul");
+        }
+
+    }
 }
