@@ -24,15 +24,15 @@ import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
- * User: sashika
- * Date: 12/1/13
- * Time: 2:17 PM
+ * User: suhan
+ * Date: 1/10/14
+ * Time: 5:17 PM
  * To change this template use File | Settings | File Templates.
  */
 @VariableResolver(DelegatingVariableResolver.class)
 public class chitViewController extends SelectorComposer<Component>{
-    Chit chit = new Chit();
-    List<RaceDetail> raceDetailList;
+    //Chit chit = new Chit();
+    //List<RaceDetail> raceDetailList;
 
 //    private int iWinAmount;
 //    private int iPlaceAmount;
@@ -40,8 +40,12 @@ public class chitViewController extends SelectorComposer<Component>{
 //    //wire components
 //    @Wire
 //    Combobox combo;
-//    @Wire
-//    Listbox emptyHorseListbox;
+    @Wire
+    Listbox chitListbox;
+    @Wire
+    Listbox chitCombinationsListbox;
+    @Wire
+    Listbox chitCombinationsDetailsListbox;
 //    @Wire
 //    Listbox selectedHorseListbox;
 //    @Wire
@@ -70,40 +74,60 @@ public class chitViewController extends SelectorComposer<Component>{
 //
 //
 //
-//    //data for the view
-//    List<RaceDetail> raceDetails = new ArrayList<RaceDetail>();
-//    ListModelList<RaceDetail> blankHorseListModel;
-//    ListModelList<RaceDetail> selectedHorseListModel;
-//    ListModelList<RaceDetail> listModelList;
-//    RaceDetail selectedRaceDetail;
+    //data for the view
+    List<Chit> chits = new ArrayList<Chit>();
+    List<ChitCombination> chitCombinations = new ArrayList<ChitCombination>();
+    List<ChitCombinationDetail> chitCombinationDetails = new ArrayList<ChitCombinationDetail>();
+    ListModelList<Chit> chitListModelList;
+    ListModelList<ChitCombination> chitCombinationListModelList;
+    ListModelList<ChitCombinationDetail> chitCombinationDetailListModelList;
+    Chit chit;
+    ChitCombination chitCombination;
+    ChitCombinationDetail chitCombinationDetail;
+
 //    private boolean chitSaved = false;
 //
 //    ListModelList<ChitCombination> listModelListCombinations = new ListModelList<ChitCombination>();
 //
 //    private Window win;
 //
-//    @WireVariable
-//    ChitService chitService;
+    @WireVariable
+    ChitService chitService;
 //
 //    @WireVariable
 //    RaceService raceService;
 //
-//    @Override
-//    public void doAfterCompose(Component comp) throws Exception{
-//        super.doAfterCompose(comp);
-//        blankHorseListModel = new ListModelList<RaceDetail>();
-//        blankHorseListModel.setMultiple(true);
-//        selectedHorseListModel = new ListModelList<RaceDetail>();
-//        selectedHorseListModel.setMultiple(true);
-//        System.out.println(raceService==null?"Raceservice null":"RaceService not null");
-//        if (combo!=null) {
-//            combo.setModel(new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date())));
-//        }
-//
-//
-//        newChit.setDisabled(true);
-//        saveChit.setDisabled(true);
-//    }
+    @Override
+    public void doAfterCompose(Component comp) throws Exception{
+        super.doAfterCompose(comp);
+        chitListModelList = new ListModelList<Chit>();
+        chitListModelList.setMultiple(true);
+        chitCombinationListModelList = new ListModelList<ChitCombination>();
+        chitCombinationListModelList.setMultiple(true);
+        chitCombinationDetailListModelList = new ListModelList<ChitCombinationDetail>();
+        chitCombinationDetailListModelList.setMultiple(true);
+
+        chitListModelList.addAll(chitService.getAllChits());
+        chitListbox.setModel(chitListModelList);
+    }
+
+    //when user select one row from the Chit list
+    @Listen("onSelect = #chitListbox")
+    public void onChitRowSelect() {
+        chitCombinationListModelList.clear();
+        //System.out.println("Chit row selected");
+        chitCombinationListModelList.addAll(chitService.getAllChitCombinationsByChitID(chitListModelList.getSelection().iterator().next().getId()));
+        chitCombinationsListbox.setModel(chitCombinationListModelList);
+    }
+
+    //when user select one row from the Chit combination list
+    @Listen("onSelect = #chitCombinationsListbox")
+    public void onChitCombinationRowSelect() {
+        chitCombinationDetailListModelList.clear();
+        //System.out.println("Chit row selected");
+        chitCombinationDetailListModelList.addAll(chitService.getAllChitCombinationDetailsByChitCombinationID(chitCombinationListModelList.getSelection().iterator().next().getId()));
+        chitCombinationsDetailsListbox.setModel(chitCombinationDetailListModelList);
+    }
 //
 //    /*
 //    * After entering value in the place input value OR
@@ -186,11 +210,6 @@ public class chitViewController extends SelectorComposer<Component>{
 //        }
 //    }
 //
-//    //when user selects the check box of Race Detail list
-//    @Listen("onSelect = #emptyHorseListbox")
-//    public void raceDetailSelectCheckBox() {
-//       selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
-//    }
 //
 //    //when user clicks the palce bet button
 ////    @Listen("onClick = #addWinPlaceInfo")

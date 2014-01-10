@@ -1,109 +1,111 @@
 <?link rel="stylesheet" type="text/css" href="/style.css"?>
 <window apply="org.zkoss.essentials.chapter6.mvc.chitViewController"
         border="normal" hflex="1" vflex="1" contentStyle="overflow:auto;">
-    <caption src="/imgs/todo.png" sclass="fn-caption" label="Bet Information"/>
+    <caption src="/imgs/todo.png" sclass="fn-caption" label="View Today's Bets"/>
     <borderlayout>
         <center autoscroll="true" border="none">
             <vlayout hflex="1" vflex="1">
-                <vbox align="east" hflex="1">
-                    <grid>
-                        <!--<columns>-->
-                        <!--<column hflex="1" label="Win" align="center"/>-->
-                        <!--<column hflex="2" label="Place" align="center" />-->
-                        <!--</columns>-->
-                        <rows>
-                            <row>
-                                <cell> <label value = "Centre Number "/><intbox id="centreNumberInput" onOK="serialNumberInput.focus();"/></cell>
-                                <cell> <label value = "Serial Number "/><intbox id="serialNumberInput" onOK="chitValueInput.focus();"/></cell>
-                                <cell> <label value = "Chit Value "/><intbox id="chitValueInput" format="#,##0.00" constraint="no negative: Chit value cannot be negative" onOK="combo.focus();"/></cell>
-                                <cell> <button id="newChit" label="New chit"/></cell>
-                                <cell> <button id="saveChit" label="Save chit"/></cell>
-                            </row>
-                        </rows>
-                    </grid>
-                    <hbox>
-                        <combobox id="combo" autodrop="true" placeholder="Type horse name" readonly="true"/>
-                        <button id="addHorseBet" image="/imgs/plus.png" width="36px"/>
-                    </hbox>
-                    <hbox>
-                        <checkbox checked="true"
-                                  onCheck="combo.autodrop = self.checked"
-                                  label="Auto drop horse name when typing" />
-                    </hbox>
-                </vbox>
-                <listbox id="emptyHorseListbox" checkmark="true" multiple="true" onOK="winInput.focus();">
+                <listbox id="chitListbox" checkmark="false" multiple="true">
                     <!--<auxhead>-->
                         <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
-                    <!--<listhead>-->
-                        <!--<listheader label="Select All"/>-->
-                        <!--<listheader/>-->
-                        <!--<listheader/>-->
-                        <!--<listheader/>-->
-                    <!--</listhead>-->
+                    <listhead>
+                        <listheader label="Chit ID"/>
+                        <listheader label="Centre Number"/>
+                        <listheader label="Serial Number"/>
+                        <listheader label="Chit Value"/>
+                        <listheader label="Chit Win Value"/>
+                        <listheader label="Delete Chit"/>
+                    </listhead>
                     <template name="model">
                         <listitem sclass="selected-area" value="${each}">
-                            <!--<listcell>-->
-                            <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
-                            <!--</listcell>-->
                             <listcell>
-                                <label value="${each.horseId}"/>
+                                <label value="${each.id}"/>
                             </listcell>
                             <listcell>
-                                <label value="${each.jockey}"/>
+                                <label value="${each.chitCentreNo}"/>
                             </listcell>
                             <listcell>
-                                <label value="${each.trainer}"/>
+                                <label value="${each.chitSerialNo}"/>
                             </listcell>
                             <listcell>
-                                <button forward="onClick=emptyHorseListbox.onHorseDelete" image="/imgs/cross.png" width="36px"/>
+                                <label value="${each.chitValue}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.chitWinValue}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=chitListbox.onChitDelete" image="/imgs/cross.png" width="36px"/>
                             </listcell>
                         </listitem>
                     </template>
                 </listbox>
-                <hlayout sclass="selected-area">
-                    <label id="selectedText" />
-                </hlayout>
-                <grid>
-                    <rows>
-                        <row>
-                            <cell> <label value = "Win   "/><intbox id="winInput" format="#,##0" constraint="no negative: Win bet amount cannot be negative" onOK="placeInput.focus();"/></cell>
-                            <cell> <label value = "Place   "/><intbox id="placeInput" format="#,##0" constraint="no negative: Place bet amount cannot be negative"/></cell>
-                        </row>
-                    </rows>
-                </grid>
-                <hlayout sclass="selected-area">
-                    <label id="selectedHorsesDetails" />
-                </hlayout>
-                <button id="addWinPlaceInfo" label="Enter Bet details" autodisable="self" />
-                <listbox id="combinationsListbox" hflex="2" vflex="true">
+                <listbox id="chitCombinationsListbox" checkmark="false" multiple="true">
                     <!--<auxhead>-->
-                        <!--<auxheader colspan="3">Race combinations</auxheader>-->
+                    <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
                     <listhead>
-                        <listheader label="Combined races" />
-                        <listheader label="Win or Place" />
-                        <listheader label="Bet amount" />
-                        <listheader label="View Details"/>
+                        <listheader label="Chit Combination ID"/>
+                        <listheader label="Bet Value"/>
+                        <listheader label="Combined elements"/>
+                        <listheader label="Win Place"/>
+                        <listheader label="Win Value"/>
+                        <listheader label="Delete Chit Combination"/>
                     </listhead>
                     <template name="model">
                         <listitem sclass="selected-area" value="${each}">
-                            <!--<listcell>-->
-                            <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
-                            <!--</listcell>-->
                             <listcell>
-                                <label value="${each.combinedElements}"/>
-
-                            </listcell>
-                            <listcell>
-                                <label value="${each.winPlace}"/>
+                                <label value="${each.id}"/>
                             </listcell>
                             <listcell>
                                 <label value="${each.betValue}"/>
                             </listcell>
                             <listcell>
-                                <image src="/imgs/QuestionmarkButton-16x16.png" tooltip="mail"
-                                       style="cursor: help" />
+                                <label value="${each.combinedElements}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.winPlace}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.winValue}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=chitCombinationsListbox.onChitDetailDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+                <listbox id="chitCombinationsDetailsListbox" checkmark="false" multiple="true">
+                    <!--<auxhead>-->
+                    <!--<auxheader>Race details for the Chit1</auxheader>-->
+                    <!--</auxhead>-->
+                    <listhead>
+                        <listheader label="Chit ID"/>
+                        <listheader label="Centre Number"/>
+                        <listheader label="Serial Number"/>
+                        <listheader label="Chit Value"/>
+                        <listheader label="Chit Win Value"/>
+                        <listheader label="Delete Chit"/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <listcell>
+                                <label value="${each.id}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.chitCentreNo}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.chitSerialNo}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.chitValue}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.chitWinValue}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=chitListbox.onChitDelete" image="/imgs/cross.png" width="36px"/>
                             </listcell>
                         </listitem>
                     </template>
@@ -112,35 +114,4 @@
         </center>
 
     </borderlayout>
-    <zk>
-        <popup id="mail" width="300px">
-            <listbox id="combinationsListbox2" hflex="2" vflex="true" model = "${each.chitCombinationDetails}">
-                <auxhead>
-                    <auxheader colspan="3">Race combinations</auxheader>
-                </auxhead>
-                <listhead>
-                    <listheader label="Combined races" />
-                    <listheader label="Win or Place" />
-                    <listheader label="Bet amount" />
-                </listhead>
-                <template name="model">
-                    <listitem sclass="selected-area" value="${each}">
-                        <!--<listcell>-->
-                        <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
-                        <!--</listcell>-->
-                        <listcell>
-                            <label value="${each.raceDetail.horseId}"/>
-
-                        </listcell>
-                        <listcell>
-                            <label value="${each.raceDetail.jockey}"/>
-                        </listcell>
-                        <listcell>
-                            <label value="${each.raceDetail.trainer}"/>
-                        </listcell>
-                    </listitem>
-                </template>
-            </listbox>
-        </popup>
-    </zk>
 </window>

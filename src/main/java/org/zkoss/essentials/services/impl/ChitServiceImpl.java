@@ -14,7 +14,9 @@ import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
 import org.zkoss.essentials.services.ChitService;
 
+import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -65,4 +67,24 @@ public class ChitServiceImpl implements ChitService {
     public void updateChit(Chit chit) {
 
     }
+
+    //@Override
+    public List<Chit> getAllChits() {
+        List<Chit> raceDetailList = chitDao.queryAll();
+        System.out.println(" ------------- Query all Chit results:"+ raceDetailList.size());
+        return raceDetailList;
+    }
+
+    public List<ChitCombination> getAllChitCombinationsByChitID(long chitID) {
+        List<ChitCombination> chitCombinationListList = chitCombinationDao.queryAllByChitID(chitID);
+        System.out.println(" ------------- Query all Chit Combinations:"+ chitCombinationListList.size());
+        return chitCombinationListList;
+    }
+
+    public List<ChitCombinationDetail> getAllChitCombinationDetailsByChitCombinationID(long chitCombinationID) {
+        List<ChitCombinationDetail> chitCombinationDetailList = chitCombinationDetailDao.queryAllByChitCombinationID(chitCombinationID);
+        System.out.println(" ------------- Query all Chit Combination Details:"+ chitCombinationDetailList.size());
+        return chitCombinationDetailList;
+    }
+
 }

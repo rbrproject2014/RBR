@@ -29,6 +29,12 @@ public class ChitCombinationDao {
         return query.getResultList();
     }
 
+    public List<ChitCombination> queryAllByChitID(long chitID){
+        Query query = em.createQuery("SELECT e FROM ChitCombination e JOIN e.chit r WHERE r.id=:d");
+        query.setParameter("d",chitID);
+        return query.getResultList();
+    }
+
     public ChitCombination reload(ChitCombination chitCombination){
         return em.find(ChitCombination.class,chitCombination.getId());
     }

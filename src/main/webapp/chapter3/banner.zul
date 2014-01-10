@@ -1,12 +1,12 @@
 <div hflex="1" vflex="1" sclass="banner">
     <hbox hflex="1" vflex="1" align="center">
         <a href="http://www.sportinglife.com/racing/results/">
-            <image src="/imgs/HorseLsssogo.png" width="50px" />
-            <!--<image src="/imgs/HorseLogo.png" width="50px" />-->
+            <!--<image src="/imgs/HorseLsssogo.png" width="50px" />-->
+            <image src="/imgs/HorseLogo.png" width="50px" />
         </a>
         <div width="400px">
-            <!--<label value="      Race by Race..." sclass="banner-head" />-->
-            <label value="      Test application..." sclass="banner-head" />
+            <label value="      Race by Race..." sclass="banner-head" />
+            <!--<label value="      Test application..." sclass="banner-head" />-->
         </div>
         <hbox hflex="1" vflex="1" pack="end" align="end">
             Anonymous
