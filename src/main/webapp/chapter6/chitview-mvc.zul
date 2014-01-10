@@ -1,5 +1,5 @@
 <?link rel="stylesheet" type="text/css" href="/style.css"?>
-<window apply="org.zkoss.essentials.chapter6.mvc.chitEntryController"
+<window apply="org.zkoss.essentials.chapter6.mvc.chitViewController"
         border="normal" hflex="1" vflex="1" contentStyle="overflow:auto;">
     <caption src="/imgs/todo.png" sclass="fn-caption" label="Bet Information"/>
     <borderlayout>
@@ -13,8 +13,8 @@
                         <!--</columns>-->
                         <rows>
                             <row>
-                                <cell> <label value = "Centre Number "/><intbox id="centreNumberInput" constraint="no empty: Please enter Centre Number" onOK="serialNumberInput.focus();"/></cell>
-                                <cell> <label value = "Serial Number "/><intbox id="serialNumberInput" constraint="no empty: Please enter Serial Number" onOK="chitValueInput.focus();"/></cell>
+                                <cell> <label value = "Centre Number "/><intbox id="centreNumberInput" onOK="serialNumberInput.focus();"/></cell>
+                                <cell> <label value = "Serial Number "/><intbox id="serialNumberInput" onOK="chitValueInput.focus();"/></cell>
                                 <cell> <label value = "Chit Value "/><intbox id="chitValueInput" format="#,##0.00" constraint="no negative: Chit value cannot be negative" onOK="combo.focus();"/></cell>
                                 <cell> <button id="newChit" label="New chit"/></cell>
                                 <cell> <button id="saveChit" label="Save chit"/></cell>
@@ -22,7 +22,7 @@
                         </rows>
                     </grid>
                     <hbox>
-                        <combobox id="combo" autodrop="true" placeholder="Select race detail" readonly="true"/>
+                        <combobox id="combo" autodrop="true" placeholder="Type horse name" readonly="true"/>
                         <button id="addHorseBet" image="/imgs/plus.png" width="36px"/>
                     </hbox>
                     <hbox>
@@ -42,7 +42,7 @@
                         <!--<listheader/>-->
                     <!--</listhead>-->
                     <template name="model">
-                        <listitem value="${each}">
+                        <listitem sclass="selected-area" value="${each}">
                             <!--<listcell>-->
                             <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
                             <!--</listcell>-->
@@ -61,7 +61,7 @@
                         </listitem>
                     </template>
                 </listbox>
-                <hlayout>
+                <hlayout sclass="selected-area">
                     <label id="selectedText" />
                 </hlayout>
                 <grid>
@@ -72,7 +72,7 @@
                         </row>
                     </rows>
                 </grid>
-                <hlayout>
+                <hlayout sclass="selected-area">
                     <label id="selectedHorsesDetails" />
                 </hlayout>
                 <button id="addWinPlaceInfo" label="Enter Bet details" autodisable="self" />
@@ -81,17 +81,16 @@
                         <!--<auxheader colspan="3">Race combinations</auxheader>-->
                     <!--</auxhead>-->
                     <listhead>
-                        <listheader label="View Details"/>
                         <listheader label="Combined races" />
                         <listheader label="Win or Place" />
                         <listheader label="Bet amount" />
+                        <listheader label="View Details"/>
                     </listhead>
                     <template name="model">
-                        <listitem value="${each}">
-                            <listcell>
-                                <image src="/imgs/QuestionmarkButton-16x16.png" popup="mail"
-                                       style="cursor: pointer" />
-                            </listcell>
+                        <listitem sclass="selected-area" value="${each}">
+                            <!--<listcell>-->
+                            <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
+                            <!--</listcell>-->
                             <listcell>
                                 <label value="${each.combinedElements}"/>
 
@@ -102,6 +101,10 @@
                             <listcell>
                                 <label value="${each.betValue}"/>
                             </listcell>
+                            <listcell>
+                                <image src="/imgs/QuestionmarkButton-16x16.png" tooltip="mail"
+                                       style="cursor: help" />
+                            </listcell>
                         </listitem>
                     </template>
                 </listbox>
@@ -111,7 +114,7 @@
     </borderlayout>
     <zk>
         <popup id="mail" width="300px">
-            <listbox id="combinationsViewDetListbox" hflex="2" vflex="true">
+            <listbox id="combinationsListbox2" hflex="2" vflex="true" model = "${each.chitCombinationDetails}">
                 <auxhead>
                     <auxheader colspan="3">Race combinations</auxheader>
                 </auxhead>
@@ -121,7 +124,10 @@
                     <listheader label="Bet amount" />
                 </listhead>
                 <template name="model">
-                    <listitem value="${each}">
+                    <listitem sclass="selected-area" value="${each}">
+                        <!--<listcell>-->
+                        <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
+                        <!--</listcell>-->
                         <listcell>
                             <label value="${each.raceDetail.horseId}"/>
 

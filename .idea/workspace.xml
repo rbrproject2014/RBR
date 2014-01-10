@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88b28450-de54-4600-b081-9937d191e0a0" name="Default" comment="Remove Selected LOV item from the list">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java" />
+    <list default="true" id="88b28450-de54-4600-b081-9937d191e0a0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/chapter6/indexViewChits.zul" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter4/SidebarPageConfigChapter4Impl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter4/SidebarPageConfigChapter4Impl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul" afterPath="$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul" afterPath="$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/chapter6/horselist-mvc.zul" afterPath="$PROJECT_DIR$/src/main/webapp/chapter6/horselist-mvc.zul" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/chapter4/sidebar.zul" afterPath="$PROJECT_DIR$/src/main/webapp/chapter4/sidebar.zul" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="essentials.iws" />
@@ -34,9 +41,9 @@
     <file path="/RaceService.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387898317669" ignored="false" />
     <file path="/RaceServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387900189933" ignored="false" />
     <file path="/chit-entry.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1385891328250" ignored="false" />
-    <file path="/chitEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388585664629" ignored="false" />
-    <file path="/fragment.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388036275736" ignored="false" />
-    <file path="/banner.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388211185408" ignored="false" />
+    <file path="/chitEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389353624930" ignored="false" />
+    <file path="/fragment.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389344492395" ignored="false" />
+    <file path="/banner.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388739057821" ignored="false" />
     <file path="/SidebarChapter4Controller.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387775403280" ignored="false" />
     <file path="$PROJECT_DIR$/../zkessentials-master/src/main/java/org/zkoss/essentials/chapter6/mvc/ChitController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388035028191" ignored="false" />
     <file path="/ChitController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388032660575" ignored="false" />
@@ -44,13 +51,16 @@
     <file path="$PROJECT_DIR$/../zkessentials-master/src/main/java/org/zkoss/essentials/chapter6/HorseServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387877848967" ignored="false" />
     <file path="/HorseServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387877822929" ignored="false" />
     <file path="/RaceDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387900802719" ignored="false" />
-    <file path="/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388585559957" ignored="false" />
-    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388574983843" ignored="false" />
+    <file path="/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389353443611" ignored="false" />
+    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389351569019" ignored="false" />
     <file path="/betwindow.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388041032609" ignored="false" />
     <file path="/horseEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210578263" ignored="false" />
-    <file path="/raceEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210807051" ignored="false" />
-    <file path="D:/RaceByRace/zkessentials-master/src/main/java/org/zkoss/essentials/chapter6/mvc/HorseController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210941974" ignored="false" />
+    <file path="/raceEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388744034465" ignored="false" />
     <file path="/HorseController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210939023" ignored="false" />
+    <file path="/horselist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389336159026" ignored="false" />
+    <file path="D:/RaceByRace/zkessentials-master/src/main/webapp/chapter6/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388741119415" ignored="false" />
+    <file path="/sidebar.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389344368368" ignored="false" />
+    <file path="/indexViewChits.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389344458693" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,73 +121,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chitlist-mvc.zul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul">
+      <file leaf-file-name="raceEntryController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="103" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
+            <state line="151" column="78" selection-start="5498" selection-end="5498" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChitServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java">
+      <file leaf-file-name="horselist-mvc.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/horselist-mvc.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="13" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0">
+            <state line="42" column="38" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChitDao.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitDao.java">
+      <file leaf-file-name="sidebar.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter4/sidebar.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="15" selection-start="945" selection-end="949" vertical-scroll-proportion="0.72206306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chit.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Chit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="48" selection-start="1104" selection-end="1131" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="16" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RaceDetail.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/RaceDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="26" selection-start="1013" selection-end="1020" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChitCombination.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombination.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="105" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChitCombinationDetail.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="33" selection-start="813" selection-end="823" vertical-scroll-proportion="0.0">
+            <state line="13" column="74" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -186,20 +151,46 @@
       <file leaf-file-name="chitEntryController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="50" selection-start="5241" selection-end="5241" vertical-scroll-proportion="0.44">
+            <state line="155" column="42" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9916#10272#0" expanded="true" />
-                <element signature="e#10257#10258#0" expanded="true" />
+                <element signature="e#2324#2341#0" expanded="true" />
+                <element signature="e#2437#2460#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="banner.zul" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="banner.zul" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="53" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
+            <state line="14" column="59" selection-start="610" selection-end="610" vertical-scroll-proportion="0.30709678">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="65" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChitCombinationDetail.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="30" selection-start="1248" selection-end="1258" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chitlist-mvc.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="89" selection-start="774" selection-end="774" vertical-scroll-proportion="-5.44">
               <folding />
             </state>
           </provider>
@@ -225,22 +216,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Race.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Chit.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombination.java" />
         <option value="$PROJECT_DIR$/src/main/resources/import.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/horseEntryController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter4/SidebarPageConfigChapter4Impl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/horselist-mvc.zul" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chapter4/sidebar.zul" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/indexViewChits.zul" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul" />
         <option value="$PROJECT_DIR$/src/main/webapp/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul" />
       </list>
     </option>
   </component>
@@ -314,8 +305,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -396,6 +387,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -485,6 +477,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="chapter6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="essentials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RBR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -797,10 +815,39 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="essentials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="essentials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RBR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -842,6 +889,7 @@
       <recent name="org.zkoss.essentials.chapter4" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\chapter6" />
       <recent name="D:\RaceByRace\zkessentials\src\main\webapp\chapter6" />
     </key>
   </component>
@@ -1002,10 +1050,14 @@
       <created>1388210064918</created>
       <updated>1388210064918</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Remove Selected LOV item from the list">
+      <created>1388586568571</created>
+      <updated>1388586568571</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -1026,22 +1078,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32767403" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21547502" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3339012" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32810968" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6705107" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22878788" sideWeight="0.67232597" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19583778" sideWeight="0.784525" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1093,7 +1145,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove Selected LOV item from the list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial part of Race detail data modeling" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1110,6 +1162,7 @@
     <MESSAGE value="changes" />
     <MESSAGE value="import.sql insert data changes&#10;resetting win place values&#10;chitEntryController comments added" />
     <MESSAGE value="Remove Selected LOV item from the list" />
+    <MESSAGE value="Initial part of Race detail data modeling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1131,118 +1184,119 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter4/SidebarPageConfigChapter4Impl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="50" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0">
+        <state line="25" column="92" selection-start="950" selection-end="950" vertical-scroll-proportion="0.2632258">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/RaceServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter3/sidebar.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
+        <state line="7" column="69" selection-start="180" selection-end="180" vertical-scroll-proportion="0.15354839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/indexViewChits.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="44" selection-start="482" selection-end="482" vertical-scroll-proportion="0.24129032">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter4/sidebar.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="74" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Race.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="33" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/TodoListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="43" selection-start="3712" selection-end="3980" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="33" selection-start="813" selection-end="823" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/RaceDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="26" selection-start="1013" selection-end="1020" vertical-scroll-proportion="0.0">
+        <state line="151" column="78" selection-start="5498" selection-end="5498" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombination.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="105" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0">
+        <state line="109" column="16" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.7148387">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="53" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
+        <state line="77" column="45" selection-start="4497" selection-end="4497" vertical-scroll-proportion="0.6270968">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/RaceDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
+        <state line="62" column="78" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/index.zul">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="54" selection-start="481" selection-end="510" vertical-scroll-proportion="0.5358166">
+        <state line="34" column="81" selection-start="1267" selection-end="1267" vertical-scroll-proportion="-3.5918636">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="30" selection-start="1248" selection-end="1258" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Chit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/horselist-mvc.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="48" selection-start="1104" selection-end="1131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="42" column="38" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="50" selection-start="5241" selection-end="5241" vertical-scroll-proportion="0.44">
+        <state line="155" column="42" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9916#10272#0" expanded="true" />
-            <element signature="e#10257#10258#0" expanded="true" />
+            <element signature="e#2324#2341#0" expanded="true" />
+            <element signature="e#2437#2460#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="103" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
+        <state line="14" column="89" selection-start="774" selection-end="774" vertical-scroll-proportion="-5.44">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0">
+        <state line="33" column="65" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="15" selection-start="945" selection-end="949" vertical-scroll-proportion="0.72206306">
+        <state line="14" column="59" selection-start="610" selection-end="610" vertical-scroll-proportion="0.30709678">
           <folding />
         </state>
       </provider>

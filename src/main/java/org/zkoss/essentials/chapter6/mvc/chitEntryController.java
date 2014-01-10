@@ -68,6 +68,8 @@ public class chitEntryController extends SelectorComposer<Component>{
 
     @Wire
     Listbox combinationsListbox;
+    @Wire
+    Listbox combinationsViewDetListbox;
 
 
 
@@ -80,6 +82,7 @@ public class chitEntryController extends SelectorComposer<Component>{
     private boolean chitSaved = false;
 
     ListModelList<ChitCombination> listModelListCombinations = new ListModelList<ChitCombination>();
+    ListModelList<ChitCombinationDetail> listModelListCombinationDetails = new ListModelList<ChitCombinationDetail>();
 
     private Window win;
 
@@ -101,8 +104,10 @@ public class chitEntryController extends SelectorComposer<Component>{
             combo.setModel(new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date())));
         }
 
+
         newChit.setDisabled(true);
         saveChit.setDisabled(true);
+        centreNumberInput.setFocus(true);
     }
 
     /*
@@ -181,8 +186,13 @@ public class chitEntryController extends SelectorComposer<Component>{
             combo.setValue("");
 //        }else if (combo.getSelectedItem()==null){
 //            Clients.showNotification("Race detail entered does not exist");
-        }else if(emptyHorseListbox.getModel().getSize()>0){
-            emptyHorseListbox.setFocus(true);
+        }else{
+            if (emptyHorseListbox.getModel()==null){
+                Clients.showNotification("Please select race detail to add");
+            }
+            else {//if(emptyHorseListbox.getModel().getSize()>0){
+                emptyHorseListbox.setFocus(true);
+            }
         }
     }
 
@@ -190,6 +200,20 @@ public class chitEntryController extends SelectorComposer<Component>{
     @Listen("onSelect = #emptyHorseListbox")
     public void raceDetailSelectCheckBox() {
        selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
+    }
+
+    //when user selects the check box of Chit Combination list
+    @Listen("onSelect = #combinationsListbox")
+    public void chitCombinationSelectCheckBox() {
+        listModelListCombinationDetails.clear();
+        //selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
+        //System.out.println("********************"+listModelListCombinations.getSelection().iterator().next().getChitCombinationDetails().iterator().next().getRaceDetail().getHorseId());
+        Iterator<ChitCombination> iterator = listModelListCombinations.getSelection().iterator();
+        Iterator<ChitCombinationDetail> iterator1 = iterator.next().getChitCombinationDetails().iterator();
+        while(iterator1.hasNext()){
+            listModelListCombinationDetails.add(iterator1.next());
+        }
+        combinationsViewDetListbox.setModel(listModelListCombinationDetails);
     }
 
     //when user clicks the palce bet button
@@ -256,6 +280,9 @@ public class chitEntryController extends SelectorComposer<Component>{
                 public void onEvent(Messagebox.ClickEvent clickEvent) throws Exception {
                     if(Messagebox.ON_YES == clickEvent.getName()){
                         Executions.sendRedirect("/chapter6/indexChit.zul");
+                    }
+                    else if (Messagebox.ON_NO == clickEvent.getName()){
+                        return;
                     }
                 }
             });
