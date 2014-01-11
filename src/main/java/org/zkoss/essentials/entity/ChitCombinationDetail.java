@@ -34,6 +34,10 @@ public class ChitCombinationDetail implements Serializable {
     	this.raceDetail = raceDetail;
     }
 
+    public ChitCombinationDetail(){
+
+    }
+
 	public long getId() {
 		return this.id;
 	}

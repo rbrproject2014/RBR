@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b28450-de54-4600-b081-9937d191e0a0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/ChitService.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/ChitService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul" afterPath="$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul" afterPath="$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -23,13 +19,13 @@
     <file path="$PROJECT_DIR$/../zkessentials-master/src/main/java/org/zkoss/essentials/entity/RaceDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387897489638" ignored="false" />
     <file path="/User.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1384904726875" ignored="false" />
     <file path="/ChitCombination.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388078108110" ignored="false" />
-    <file path="/ChitCombinationDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1384793279995" ignored="false" />
+    <file path="/ChitCombinationDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389415232662" ignored="false" />
     <file path="/import.sql" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388204711607" ignored="false" />
     <file path="/TodoDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1385739368702" ignored="false" />
     <file path="/Race.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388072326447" ignored="false" />
     <file path="/ChitDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388075607549" ignored="false" />
     <file path="/ChitCombinationDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389367205079" ignored="false" />
-    <file path="/ChitCombinationDetailDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389368335992" ignored="false" />
+    <file path="/ChitCombinationDetailDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389413642279" ignored="false" />
     <file path="/RaceDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1385795225474" ignored="false" />
     <file path="/RaceDetailDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387899753066" ignored="false" />
     <file path="/ChitService.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389367222391" ignored="false" />
@@ -48,7 +44,7 @@
     <file path="/HorseServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387877822929" ignored="false" />
     <file path="/RaceDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387900802719" ignored="false" />
     <file path="/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389353443611" ignored="false" />
-    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389366282497" ignored="false" />
+    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389413467660" ignored="false" />
     <file path="/betwindow.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388041032609" ignored="false" />
     <file path="/horseEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210578263" ignored="false" />
     <file path="/raceEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388744034465" ignored="false" />
@@ -58,7 +54,7 @@
     <file path="/sidebar.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389344368368" ignored="false" />
     <file path="/indexViewChits.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389344458693" ignored="false" />
     <file path="/chitViewController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389368535912" ignored="false" />
-    <file path="/chitview-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389367735597" ignored="false" />
+    <file path="/chitview-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389415510764" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,10 +115,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chitViewController.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="chitViewController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="43" selection-start="3473" selection-end="3473" vertical-scroll-proportion="0.6766169">
+            <state line="115" column="68" selection-start="3554" selection-end="3554" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2057#2063#0" expanded="true" />
@@ -133,55 +129,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChitService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/ChitService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="47" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChitServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="102" selection-start="2787" selection-end="2787" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ChitCombinationDetail.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="38" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chitview-mvc.zul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="52" selection-start="2217" selection-end="2240" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="banner.zul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="37" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chit.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Chit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="99" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
+            <state line="37" column="8" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -191,6 +142,24 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombination.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="41" column="118" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chitview-mvc.zul" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="61" selection-start="4527" selection-end="4527" vertical-scroll-proportion="0.5522042">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chitlist-mvc.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="78" selection-start="6860" selection-end="6860" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/horseEntryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter4/SidebarPageConfigChapter4Impl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceEntryController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/chapter6/horselist-mvc.zul" />
@@ -227,11 +195,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/chapter3/banner.zul" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/ChitService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul" />
       </list>
     </option>
   </component>
@@ -852,13 +821,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="options.splitter.main.proportions" value="0.2975" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="D:/RaceByRace/zkessentials-master" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
@@ -880,8 +849,8 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -930,6 +899,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -955,19 +937,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1058,7 +1027,11 @@
       <created>1389354061246</created>
       <updated>1389354061246</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="chit view page added. small prob with chit combination detail population">
+      <created>1389369122848</created>
+      <updated>1389369122848</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1085,7 +1058,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2156197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22410867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1097,7 +1070,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6705107" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19545455" sideWeight="0.7843803" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19545455" sideWeight="0.77589136" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1149,7 +1122,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="combination details now visible in popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="chit view page added. small prob with chit combination detail population" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1168,6 +1141,7 @@
     <MESSAGE value="Remove Selected LOV item from the list" />
     <MESSAGE value="Initial part of Race detail data modeling" />
     <MESSAGE value="combination details now visible in popup" />
+    <MESSAGE value="chit view page added. small prob with chit combination detail population" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1217,65 +1191,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="22" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Chit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="99" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="89" selection-start="774" selection-end="774" vertical-scroll-proportion="-0.5497512">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="52" selection-start="2217" selection-end="2240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="944" selection-end="1192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="147" column="20" selection-start="5139" selection-end="5139" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="108" selection-start="400" selection-end="400" vertical-scroll-proportion="-0.49156627">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombination.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="118" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="38" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1294,15 +1212,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="22" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="43" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/Chit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="13" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.4678899">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="80" selection-start="898" selection-end="898" vertical-scroll-proportion="0.41513762">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombination.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="118" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/ChitCombinationDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="8" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="43" selection-start="3473" selection-end="3473" vertical-scroll-proportion="0.6766169">
+        <state line="115" column="68" selection-start="3554" selection-end="3554" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2057#2063#0" expanded="true" />
             <element signature="e#2125#2142#0" expanded="true" />
             <element signature="e#2216#2239#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitlist-mvc.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="78" selection-start="6860" selection-end="6860" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/chapter6/chitview-mvc.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="61" selection-start="4527" selection-end="4527" vertical-scroll-proportion="0.5522042">
+          <folding />
         </state>
       </provider>
     </entry>

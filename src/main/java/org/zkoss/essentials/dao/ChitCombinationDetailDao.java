@@ -30,9 +30,14 @@ public class ChitCombinationDetailDao {
     }
 
     public List<ChitCombinationDetail> queryAllByChitCombinationID(long chitCombinationID){
+        System.out.println("1...");
         Query query = em.createQuery("SELECT e FROM ChitCombinationDetail e JOIN e.chitCombination r WHERE r.id=:d");
+        System.out.println("2...");
         query.setParameter("d",chitCombinationID);
-        return query.getResultList();
+        System.out.println("3...");
+        List<ChitCombinationDetail> chitCombinationDetailList = query.getResultList();
+        System.out.println("4...");
+        return chitCombinationDetailList;
     }
 
     public ChitCombinationDetail reload(ChitCombinationDetail chitCombinationDetail){

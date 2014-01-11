@@ -80,29 +80,21 @@
                     <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
                     <listhead>
-                        <listheader label="Chit ID"/>
-                        <listheader label="Centre Number"/>
-                        <listheader label="Serial Number"/>
-                        <listheader label="Chit Value"/>
-                        <listheader label="Chit Win Value"/>
-                        <listheader label="Delete Chit"/>
+                        <listheader label="Race Detail ID"/>
+                        <listheader label="Jockey"/>
+                        <listheader label="Trainer"/>
+                        <listheader label="Delete Race Detail"/>
                     </listhead>
                     <template name="model">
                         <listitem sclass="selected-area" value="${each}">
                             <listcell>
-                                <label value="${each.id}"/>
+                                <label value="${each.raceDetail.horseId}"/>
                             </listcell>
                             <listcell>
-                                <label value="${each.chitCentreNo}"/>
+                                <label value="${each.raceDetail.jockey}"/>
                             </listcell>
                             <listcell>
-                                <label value="${each.chitSerialNo}"/>
-                            </listcell>
-                            <listcell>
-                                <label value="${each.chitValue}"/>
-                            </listcell>
-                            <listcell>
-                                <label value="${each.chitWinValue}"/>
+                                <label value="${each.raceDetail.trainer}"/>
                             </listcell>
                             <listcell>
                                 <button forward="onClick=chitListbox.onChitDelete" image="/imgs/cross.png" width="36px"/>
