@@ -1,20 +1,19 @@
 package org.zkoss.essentials.services.impl;
 
+import org.zkoss.essentials.dao.ChitCombinationDao;
+import org.zkoss.essentials.dao.ChitDao;
+import org.zkoss.essentials.services.ChitService;
+import org.zkoss.essentials.dao.ChitCombinationDetailDao;
+import org.zkoss.essentials.entity.ChitCombination;
+import org.zkoss.essentials.entity.ChitCombinationDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.zkoss.essentials.dao.ChitCombinationDao;
-import org.zkoss.essentials.dao.ChitCombinationDetailDao;
-import org.zkoss.essentials.dao.ChitDao;
 import org.zkoss.essentials.entity.Chit;
-import org.zkoss.essentials.entity.ChitCombination;
-import org.zkoss.essentials.entity.ChitCombinationDetail;
-import org.zkoss.essentials.services.ChitService;
 
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 

@@ -4,21 +4,15 @@ import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.RaceDetail;
 import org.zkoss.essentials.services.ChitService;
 import org.zkoss.essentials.services.RaceService;
-import org.zkoss.lang.Strings;
-import org.zkoss.zk.ui.*;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
-import org.zkoss.zk.ui.util.Clients;
-import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 import org.zkoss.zul.*;
 import org.zkoss.zul.Button;
-import org.zkoss.zul.Checkbox;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -30,7 +24,7 @@ import java.util.List;
  * Time: 11:33 AM
  * To change this template use File | Settings | File Templates.
  */
-@VariableResolver(DelegatingVariableResolver.class)
+@VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class raceEntryController extends SelectorComposer<Component>{
     private static final long serialVersionUID = 1L;
 

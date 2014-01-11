@@ -3,7 +3,6 @@ package org.zkoss.essentials.dao;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
-import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 
 import javax.persistence.EntityManager;

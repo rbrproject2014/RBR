@@ -13,15 +13,15 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.zkoss.essentials.services.SidebarPage;
+import org.zkoss.essentials.services.SidebarPageConfig;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
-import org.zkoss.essentials.services.SidebarPage;
-import org.zkoss.essentials.services.SidebarPageConfig;
 
 @Component("sidebarPageConfigAjaxbased")
 @Scope(value="request",proxyMode=ScopedProxyMode.TARGET_CLASS)
-public class SidebarPageConfigAjaxbasedImpl implements SidebarPageConfig{
+public class SidebarPageConfigAjaxbasedImpl implements SidebarPageConfig {
 	
 	HashMap<String,SidebarPage> pageMap = new LinkedHashMap<String,SidebarPage>();
 	public SidebarPageConfigAjaxbasedImpl(){		

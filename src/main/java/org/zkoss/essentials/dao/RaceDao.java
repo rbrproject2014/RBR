@@ -1,7 +1,7 @@
 package org.zkoss.essentials.dao;
 
-import org.springframework.stereotype.Repository;
 import org.zkoss.essentials.entity.Race;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

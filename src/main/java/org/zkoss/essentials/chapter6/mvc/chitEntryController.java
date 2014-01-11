@@ -1,12 +1,11 @@
 package org.zkoss.essentials.chapter6.mvc;
 
+import org.zkoss.essentials.services.ChitService;
 import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
 import org.zkoss.essentials.entity.RaceDetail;
-import org.zkoss.essentials.services.ChitService;
 import org.zkoss.essentials.services.RaceService;
-import org.zkoss.essentials.services.impl.ChitServiceImpl;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.*;
@@ -17,7 +16,6 @@ import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zk.ui.util.Clients;
-import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 import org.zkoss.zul.*;
 
 import java.math.BigDecimal;
@@ -30,7 +28,7 @@ import java.util.*;
  * Time: 2:17 PM
  * To change this template use File | Settings | File Templates.
  */
-@VariableResolver(DelegatingVariableResolver.class)
+@VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class chitEntryController extends SelectorComposer<Component>{
     Chit chit = new Chit();
     List<RaceDetail> raceDetailList;
@@ -107,7 +105,7 @@ public class chitEntryController extends SelectorComposer<Component>{
 
         newChit.setDisabled(true);
         saveChit.setDisabled(true);
-        centreNumberInput.setFocus(true);
+        //centreNumberInput.setFocus(true);  this is removed since at page load and after clicking anywhere in the page error shows
     }
 
     /*

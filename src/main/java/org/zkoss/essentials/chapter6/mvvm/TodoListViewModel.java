@@ -11,11 +11,9 @@ package org.zkoss.essentials.chapter6.mvvm;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import org.zkoss.bind.BindUtils;
 import org.zkoss.bind.Form;
-import org.zkoss.bind.Property;
 import org.zkoss.bind.ValidationContext;
 import org.zkoss.bind.Validator;
 import org.zkoss.bind.annotation.BindingParam;

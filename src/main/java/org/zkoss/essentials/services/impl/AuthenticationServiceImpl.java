@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.zkoss.essentials.entity.User;
 import org.zkoss.essentials.services.AuthenticationService;
-import org.zkoss.essentials.services.UserCredential;
 import org.zkoss.essentials.services.UserInfoService;
+import org.zkoss.essentials.services.UserCredential;
 import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 
@@ -19,7 +19,7 @@ public class AuthenticationServiceImpl implements AuthenticationService,Serializ
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
-	UserInfoService userInfoService;
+    UserInfoService userInfoService;
 
 	public UserCredential getUserCredential(){
 		Session sess = Sessions.getCurrent();

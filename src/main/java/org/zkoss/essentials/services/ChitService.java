@@ -3,10 +3,7 @@ package org.zkoss.essentials.services;
 import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
-import org.zkoss.essentials.entity.RaceDetail;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

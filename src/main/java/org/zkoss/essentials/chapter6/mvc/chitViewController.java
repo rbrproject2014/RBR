@@ -3,23 +3,15 @@ package org.zkoss.essentials.chapter6.mvc;
 import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
-import org.zkoss.essentials.entity.RaceDetail;
 import org.zkoss.essentials.services.ChitService;
-import org.zkoss.essentials.services.RaceService;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.Executions;
-import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zk.ui.event.ForwardEvent;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
-import org.zkoss.zk.ui.util.Clients;
-import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 import org.zkoss.zul.*;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -29,7 +21,7 @@ import java.util.*;
  * Time: 5:17 PM
  * To change this template use File | Settings | File Templates.
  */
-@VariableResolver(DelegatingVariableResolver.class)
+@VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class chitViewController extends SelectorComposer<Component>{
     //Chit chit = new Chit();
     //List<RaceDetail> raceDetailList;
@@ -106,7 +98,7 @@ public class chitViewController extends SelectorComposer<Component>{
         chitCombinationListModelList.setMultiple(true);
         chitCombinationDetailListModelList = new ListModelList<ChitCombinationDetail>();
         chitCombinationDetailListModelList.setMultiple(true);
-
+        System.out.println(chitService==null?"Service is null ************************":"Service isnot null***************");
         chitListModelList.addAll(chitService.getAllChits());
         chitListbox.setModel(chitListModelList);
     }

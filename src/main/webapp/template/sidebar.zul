@@ -1,0 +1,17 @@
+<grid hflex="1" vflex="1" sclass="sidebar">
+    <columns>
+        <column width="36px"/>
+        <column/>
+    </columns>
+    <rows>
+        <row>
+            <image src="/imgs/demo.png"/><a href="//rbr/main/index.zul">Add/Update Races</a>
+        </row>
+        <row>
+            <image src="/imgs/doc.png"/><a href="//rbr/main/indexChit.zul">Enter Chit Details</a>
+        </row>
+        <row>
+            <image src="/imgs/doc.png"/><a href="//rbr/main/indexViewChits.zul">View Today's Bets</a>
+        </row>
+    </rows>
+</grid>
