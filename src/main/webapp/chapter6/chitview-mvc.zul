@@ -40,7 +40,7 @@
                         </listitem>
                     </template>
                 </listbox>
-                <listbox id="chitCombinationsListbox" checkmark="false" multiple="true">
+                <listbox id="chitCombinationsListbox" checkmark="false" multiple="true" vflex="true">
                     <!--<auxhead>-->
                     <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
@@ -75,7 +75,7 @@
                         </listitem>
                     </template>
                 </listbox>
-                <listbox id="chitCombinationsDetailsListbox" checkmark="false" multiple="true">
+                <listbox id="chitCombinationsDetailsListbox" checkmark="false" multiple="true" vflex="true">
                     <!--<auxhead>-->
                     <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
