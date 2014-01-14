@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b28450-de54-4600-b081-9937d191e0a0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/template/banner.zul" afterPath="$PROJECT_DIR$/src/main/webapp/template/banner.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.zul" afterPath="$PROJECT_DIR$/src/main/webapp/index.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/rbr/main/index.zul" afterPath="$PROJECT_DIR$/src/main/webapp/rbr/main/index.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/rbr/main/indexChit.zul" afterPath="$PROJECT_DIR$/src/main/webapp/rbr/main/indexChit.zul" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/rbr/main/indexViewChits.zul" afterPath="$PROJECT_DIR$/src/main/webapp/rbr/main/indexViewChits.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="essentials.iws" />
@@ -46,7 +41,7 @@
     <file path="/HorseServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387877822929" ignored="false" />
     <file path="/RaceDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387900802719" ignored="false" />
     <file path="/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389353443611" ignored="false" />
-    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389720695855" ignored="false" />
+    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389721532540" ignored="false" />
     <file path="/betwindow.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388041032609" ignored="false" />
     <file path="/horseEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210578263" ignored="false" />
     <file path="/raceEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388744034465" ignored="false" />
@@ -148,7 +143,7 @@
       <file leaf-file-name="banner.zul" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/template/banner.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="50" selection-start="704" selection-end="704" vertical-scroll-proportion="0.5037037">
+            <state line="15" column="72" selection-start="697" selection-end="697" vertical-scroll-proportion="0.4722222">
               <folding />
             </state>
           </provider>
@@ -1128,7 +1123,11 @@
       <created>1389720705080</created>
       <updated>1389720705080</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="banner2.jpg added">
+      <created>1389721536900</created>
+      <updated>1389721536900</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1219,7 +1218,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOV clear whole race detail per race upon selecting a race detail implemented&#10;import.sql updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="banner2.jpg added" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1244,6 +1243,7 @@
     <MESSAGE value="view refactor successful&#10;Model refactor attempt failed and reverted." />
     <MESSAGE value="banner added with words for testing" />
     <MESSAGE value="LOV clear whole race detail per race upon selecting a race detail implemented&#10;import.sql updated" />
+    <MESSAGE value="banner2.jpg added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1379,7 +1379,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/template/banner.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="704" selection-end="704" vertical-scroll-proportion="0.5037037">
+        <state line="15" column="72" selection-start="697" selection-end="697" vertical-scroll-proportion="0.4722222">
           <folding />
         </state>
       </provider>
