@@ -4,6 +4,7 @@ import org.zkoss.essentials.entity.Chit;
 import org.zkoss.essentials.entity.ChitCombination;
 import org.zkoss.essentials.entity.ChitCombinationDetail;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -18,6 +19,7 @@ public interface ChitService {
     public void saveChit(Chit chit);
     public void updateChit(Chit chit);
     public List<Chit> getAllChits();
+    public BigDecimal getTotalDailyChitValue();
     public List<ChitCombination> getAllChitCombinationsByChitID(long chitID);
     public List<ChitCombinationDetail> getAllChitCombinationDetailsByChitCombinationID(long chitCombinationID);
 

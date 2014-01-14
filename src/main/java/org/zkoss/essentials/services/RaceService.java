@@ -2,9 +2,11 @@ package org.zkoss.essentials.services;
 
 import org.zkoss.essentials.entity.Race;
 import org.zkoss.essentials.entity.RaceDetail;
+import org.zkoss.zul.ListModelList;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,4 +26,5 @@ public interface RaceService {
     public Race saveRace(Race race);
     public Race updateRace(Race race);
     public void deleteRace(Race race);
+    public List<RaceDetail> getToBeRemovedRaceDetailList(RaceDetail raceDetail);
 }

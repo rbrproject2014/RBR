@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.zkoss.essentials.entity.Chit;
 
+import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.List;
 
@@ -69,9 +70,19 @@ public class ChitServiceImpl implements ChitService {
 
     //@Override
     public List<Chit> getAllChits() {
-        List<Chit> raceDetailList = chitDao.queryAll();
-        System.out.println(" ------------- Query all Chit results:"+ raceDetailList.size());
-        return raceDetailList;
+        List<Chit> chitList = chitDao.queryAll();
+        System.out.println(" ------------- Query all Chit results:"+ chitList.size());
+        return chitList;
+    }
+
+    public BigDecimal getTotalDailyChitValue(){
+        BigDecimal totalChitValue = new BigDecimal(0);
+        List<Chit> chitList = chitDao.queryAll();
+        Iterator<Chit> iterator = chitList.iterator();
+        while (iterator.hasNext()){
+            totalChitValue = totalChitValue.add(iterator.next().getChitValue());
+        }
+        return totalChitValue;
     }
 
     public List<ChitCombination> getAllChitCombinationsByChitID(long chitID) {

@@ -10,10 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.zkoss.essentials.dao.RaceDetailDao;
 import org.zkoss.essentials.entity.RaceDetail;
 import org.zkoss.essentials.services.RaceService;
+import org.zkoss.zul.ListModelList;
 
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,6 +56,10 @@ public class RaceServiceImpl implements RaceService {
         List<RaceDetail> raceDetailList = raceDetailDao.queryAll();
         System.out.println(" ------------- Query all results:"+ raceDetailList.size());
         return raceDetailList;
+    }
+
+    public List<RaceDetail> getToBeRemovedRaceDetailList(RaceDetail raceDetail){
+        return raceDetailDao.getRaceDetailsToBeRemovedLOV(raceDetail);
     }
 
 

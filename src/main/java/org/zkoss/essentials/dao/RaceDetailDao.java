@@ -1,13 +1,17 @@
 package org.zkoss.essentials.dao;
 
 import org.springframework.stereotype.Repository;
+import org.zkoss.essentials.entity.Race;
 import org.zkoss.essentials.entity.RaceDetail;
+import org.zkoss.zul.ListModelList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,6 +34,26 @@ public class RaceDetailDao {
         Query query = em.createQuery("SELECT e FROM RaceDetail e JOIN e.race r WHERE r.raceDate=:d");
         query.setParameter("d",date);
         return query.getResultList();
+    }
+
+    public List<RaceDetail> getRaceDetailsPerGivenRaceID(long raceSerialNo){
+        Query query = em.createQuery("SELECT e FROM RaceDetail e JOIN e.race r WHERE r.raceSerialNo=:d");
+        query.setParameter("d",raceSerialNo);
+        /******************* Debug Code **************************************/
+        List<RaceDetail> raceDetailList = query.getResultList();
+        Iterator<RaceDetail> iterator = raceDetailList.iterator();
+        while (iterator.hasNext()){
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^ "+iterator.next().getHorseId());
+        }
+        /*********************************************************************/
+        return raceDetailList;
+    }
+
+    public List<RaceDetail> getRaceDetailsToBeRemovedLOV(RaceDetail raceDetail){
+        System.out.println("**************************************************************");
+        long raceSerialNo = raceDetail.getRace().getRaceSerialNo();
+        System.out.println("raceSerialNo: "+raceSerialNo);
+        return getRaceDetailsPerGivenRaceID(raceSerialNo);
     }
 
     public RaceDetail reload(RaceDetail raceDetail){
@@ -56,4 +80,5 @@ public class RaceDetailDao {
             em.remove(rd);
         }
     }
+
 }

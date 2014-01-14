@@ -180,7 +180,19 @@ public class chitEntryController extends SelectorComposer<Component>{
             listModelList = new ListModelList<RaceDetail>(raceDetails);
             listModelList.setMultiple(true);
             emptyHorseListbox.setModel(listModelList);
-            combo.removeItemAt(combo.getSelectedIndex());
+            //combo.removeItemAt(combo.getSelectedIndex());
+
+            ListModelList<RaceDetail> raceDetailsToLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
+            ListModelList<RaceDetail> raceDetailsSetToBeRemoved = new ListModelList<RaceDetail>();
+            Iterator<RaceDetail> iterator = raceDetails.iterator();
+
+            while(iterator.hasNext()){
+                //System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+iterator.next().getHorseId());
+                raceDetailsSetToBeRemoved.addAll(raceService.getToBeRemovedRaceDetailList(iterator.next()));
+            }
+
+            raceDetailsToLOV.removeAll(raceDetailsSetToBeRemoved);
+            combo.setModel(raceDetailsToLOV);
             combo.setValue("");
 //        }else if (combo.getSelectedItem()==null){
 //            Clients.showNotification("Race detail entered does not exist");
@@ -214,33 +226,6 @@ public class chitEntryController extends SelectorComposer<Component>{
         combinationsViewDetListbox.setModel(listModelListCombinationDetails);
     }
 
-    //when user clicks the palce bet button
-//    @Listen("onClick = #addWinPlaceInfo")
-//    public void doAddWinPlaceClick() {
-//        //Set<Listitem> selectedList = horseListbox.getSelectedItems();
-//        Set<Listitem> selectedList = emptyHorseListbox.getSelectedItems();
-//        if (selectedList.isEmpty()) {
-//            alert("Please select at least one Race Detail to enter bet information");
-//            return;
-//        }
-//        //System.out.println(selectedHorseListModel.isEmpty()?"selectedHorseListModel is empty":"-- not empty -- ");
-//        //selectedHorseListbox.setModel(selectedHorseListModel);
-//        final Window dialog = (Window) Executions.createComponents("betwindow.zul", win, null);
-//        dialog.doModal();
-//    }
-
-//    @Listen("onClick = #popupSaveButton")
-//    public void showModal1(Event e) {
-//          Intbox ibWin = (Intbox) modalDialog.getFellow("winInput");
-//          Intbox ibPlc = (Intbox) modalDialog.getFellow("placeInput");
-//          iWinAmount = ibWin.getValue();
-//          iPlaceAmount = ibPlc.getValue();
-//          System.out.println(" --------- Win Amount: "+iWinAmount);
-//          System.out.println(" --------- Place Amount: "+iPlaceAmount);
-//          System.out.println(" --------- BetSize: ");        //error here
-//          modalDialog.detach();
-//    }
-
 
     //when user clicks the delete button of each race detail on the list
     @Listen("onHorseDelete = #emptyHorseListbox")
@@ -253,6 +238,10 @@ public class chitEntryController extends SelectorComposer<Component>{
         listModelList = new ListModelList<RaceDetail>(raceDetails);
         listModelList.setMultiple(true);
         emptyHorseListbox.setModel(listModelList);
+
+        ListModelList<RaceDetail> raceDetailsLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
+        raceDetailsLOV.removeAll(listModelList);
+        combo.setModel(raceDetailsLOV);
         System.out.println(">>>>>>>>> Horse ID to remove:"+raceDetail.getHorseId());
 
     }
@@ -277,7 +266,7 @@ public class chitEntryController extends SelectorComposer<Component>{
                 @Override
                 public void onEvent(Messagebox.ClickEvent clickEvent) throws Exception {
                     if(Messagebox.ON_YES == clickEvent.getName()){
-                        Executions.sendRedirect("/chapter6/indexChit.zul");
+                        Executions.sendRedirect("/rbr/main/indexChit.zul");
                     }
                     else if (Messagebox.ON_NO == clickEvent.getName()){
                         return;
@@ -286,7 +275,7 @@ public class chitEntryController extends SelectorComposer<Component>{
             });
         }
         else{
-            Executions.sendRedirect("/chapter6/indexChit.zul");
+            Executions.sendRedirect("/rbr/main/indexChit.zul");
         }
 
     }
