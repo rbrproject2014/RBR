@@ -1,7 +1,7 @@
 <?link rel="stylesheet" type="text/css" href="/style.css"?>
 <zk>
 	<borderlayout hflex="1" vflex="1">
-		<north height="52px" border="none" >
+		<north height="82px" border="none" >
 			<include src="/template/banner.zul"/>
 		</north>
 		<west width="180px" border="none" collapsible="true" splittable="true" minsize="300">
