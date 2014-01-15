@@ -81,6 +81,8 @@ public class chitEntryController extends SelectorComposer<Component>{
 
     ListModelList<ChitCombination> listModelListCombinations = new ListModelList<ChitCombination>();
     ListModelList<ChitCombinationDetail> listModelListCombinationDetails = new ListModelList<ChitCombinationDetail>();
+    ListModelList<RaceDetail> raceDetailsSetToBeRemoved = new ListModelList<RaceDetail>();
+    ListModelList<RaceDetail> raceDetailsToLOV = new ListModelList<RaceDetail>();
 
     private Window win;
 
@@ -166,47 +168,108 @@ public class chitEntryController extends SelectorComposer<Component>{
     }
 
 
-    //when user click Add(plus) sign of race detail or upon pressing enter
+    //when user click Add(plus) sign of race detail or upon pressing keyboard Enter button
     @Listen("onClick = #addHorseBet; onOK = #combo")
     public void addRaceDetailClickOREnter(){
-        System.out.println("Clicked...");
 
-        System.out.println(emptyHorseListbox.getModel()!=null?"list box is not null":"list box is null");
+        //DEBUG CODE
+        //System.out.println("Clicked...");
+        //System.out.println(emptyHorseListbox.getModel()!=null?"list box is not null":"list box is null");
 
+        //When there is a selection in the LOV
         if (combo.getSelectedItem()!=null) {
+
+            //PART 1 - ADD THE RACE DETAIL TO THE SELECTED LIST
+            //get the selected Race detail from the LOV
             RaceDetail raceDetail = combo.getSelectedItem().getValue();
-            System.out.println(">>>>>>>>> Horse ID:"+raceDetail.getHorseId());
+            System.out.println(">>>>>>>>> LOV selected Horse ID:"+raceDetail.getHorseId());
+
+            //add the selected LOV item to the race details list
             raceDetails.add(raceDetail);
+
+            //add the list to a ListModelList
             listModelList = new ListModelList<RaceDetail>(raceDetails);
             listModelList.setMultiple(true);
+
+            //set the ListModelList to the selected horse detail list grid
             emptyHorseListbox.setModel(listModelList);
+
+            //PART 2 - REMOVE THE CORRESPONDING RACE DETAILS FROM THE LOV
+
+            //LEGACY METHOD
+            //primitive, only removes the selected race detail from the LOV
             //combo.removeItemAt(combo.getSelectedIndex());
 
-            ListModelList<RaceDetail> raceDetailsToLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
-            ListModelList<RaceDetail> raceDetailsSetToBeRemoved = new ListModelList<RaceDetail>();
-            Iterator<RaceDetail> iterator = raceDetails.iterator();
+            //NEW METHOD
+            //set the model to the combo LOV
+            combo.setModel(getNewRaceDetailLOV());
 
-            while(iterator.hasNext()){
-                //System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+iterator.next().getHorseId());
-                raceDetailsSetToBeRemoved.addAll(raceService.getToBeRemovedRaceDetailList(iterator.next()));
-            }
-
-            raceDetailsToLOV.removeAll(raceDetailsSetToBeRemoved);
-            combo.setModel(raceDetailsToLOV);
+            //initialize LOV field to make ready for the next selection
             combo.setValue("");
-//        }else if (combo.getSelectedItem()==null){
-//            Clients.showNotification("Race detail entered does not exist");
+
+        //When the LOV selection is Null
         }else{
+            //If there are no race details in the selected race detail list, cannot proceed further
+            //Therefore inform User to add race detail
             if (emptyHorseListbox.getModel()==null){
                 Clients.showNotification("Please select race detail to add");
             }
-            else {//if(emptyHorseListbox.getModel().getSize()>0){
+            //If there is at least one selection for the selected Horse list,
+            //proceed to the next step
+            else {
                 emptyHorseListbox.setFocus(true);
             }
         }
     }
 
+    //this method is generalized in order to use in both adding and deleting race detail
+    public ListModelList<RaceDetail> getNewRaceDetailLOV(){
+
+        //NEW METHOD
+        //Step 1 - Get total race detail list per day and put to ListModelList
+        ListModelList<RaceDetail> raceDetailsToLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
+
+        //Step 2 - define empty race detail ListModelList list to be used to remove race detail
+        // set per Race under the given/selected race detail and loop for each selected detail list
+
+        //Detailed explanation:
+        //    User clicks/selects a race detail and add to the bet detail table.
+        //    But we cannot allow the user to select another race detail from the same Race.
+        //    Therefore we need to remove the rest of the race details from the ListOfValue combo
+        //    under the same Race, upon selecting a race detail
+        //moved up to class level
+        //ListModelList<RaceDetail> raceDetailsSetToBeRemoved = new ListModelList<RaceDetail>();
+
+        //Define the iterator for the already selected race detail list ListModelList
+        Iterator<RaceDetail> iterator = raceDetails.iterator();
+
+        //for Each race detail containing in the selected list, get the rest of the race details list
+        //for the corresponding race and add to the toBeRemovedRaceDetail list
+        //loop for each and every race detail in the corresponding selected race detail list and
+        //build up the race detail list to be removed from the main LOV list
+
+        //*************** drawbacks of this method *************************************************
+        //this can cause severe performance impact since backend calls are generated for each iterator.next
+        //revisit the code
+        while(iterator.hasNext()){
+            //When want to test below output either one can be tested one at a time since iterator.next is executed
+            // two times and can cause null pointer exception
+            //System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+iterator.next().getHorseId());
+            raceDetailsSetToBeRemoved.addAll(raceService.getToBeRemovedRaceDetailList(iterator.next()));
+        }
+
+        //Step 3 - Remove the race detail list relating to the selected race detail list under the given Race
+        //from the race Details LOV
+        raceDetailsToLOV.removeAll(raceDetailsSetToBeRemoved);
+
+        return raceDetailsToLOV;
+
+    }
+
+
+
     //when user selects the check box of Race Detail list
+    //this method is no functional/business use, this is to add value to UI
     @Listen("onSelect = #emptyHorseListbox")
     public void raceDetailSelectCheckBox() {
        selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
@@ -215,9 +278,10 @@ public class chitEntryController extends SelectorComposer<Component>{
     //when user selects the check box of Chit Combination list
     @Listen("onSelect = #combinationsListbox")
     public void chitCombinationSelectCheckBox() {
+        //This is for the popup data population
+        //When user clicks on a combination, corresponding combination details will be populated for this
+        //ListModelListCombinationDetails model which is linked to the popup listBox
         listModelListCombinationDetails.clear();
-        //selectedText.setValue(emptyHorseListbox.getSelectedItems().size() + " horse(s) selected");
-        //System.out.println("********************"+listModelListCombinations.getSelection().iterator().next().getChitCombinationDetails().iterator().next().getRaceDetail().getHorseId());
         Iterator<ChitCombination> iterator = listModelListCombinations.getSelection().iterator();
         Iterator<ChitCombinationDetail> iterator1 = iterator.next().getChitCombinationDetails().iterator();
         while(iterator1.hasNext()){
@@ -239,9 +303,10 @@ public class chitEntryController extends SelectorComposer<Component>{
         listModelList.setMultiple(true);
         emptyHorseListbox.setModel(listModelList);
 
-        ListModelList<RaceDetail> raceDetailsLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
-        raceDetailsLOV.removeAll(listModelList);
-        combo.setModel(raceDetailsLOV);
+//        ListModelList<RaceDetail> raceDetailsLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
+//        raceDetailsLOV.removeAll(listModelList);
+//        combo.setModel(raceDetailsLOV);
+        combo.setModel(getNewRaceDetailLOV());
         System.out.println(">>>>>>>>> Horse ID to remove:"+raceDetail.getHorseId());
 
     }
