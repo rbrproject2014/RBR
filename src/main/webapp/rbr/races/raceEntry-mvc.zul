@@ -1,6 +1,8 @@
 <?link rel="stylesheet" type="text/css" href="/style.css"?>
+<?init class="org.zkoss.essentials.login.AuthenticationInit"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/template-rbr.zul"?>
 <window apply="org.zkoss.essentials.chapter6.mvc.raceEntryController"
-        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto">
+        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto"  self="@define(content)">
     <caption src="/imgs/todo.png" sclass="fn-caption" label="Race Details"/>
     <borderlayout>
         <center autoscroll="true" border="none">

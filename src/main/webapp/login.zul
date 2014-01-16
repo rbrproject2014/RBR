@@ -1,0 +1,36 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/template-anonymous.zul"?>
+<zk>
+	<hbox self="@define(content)" vflex="1" hflex="1" align="center"
+		pack="center" spacing="20px">
+		<vlayout>
+			<window id="loginWin"
+				apply="org.zkoss.essentials.login.LoginController"
+				title="Login with you name" border="normal" hflex="min">
+				<vbox hflex="min" align="center">
+					<grid hflex="min">
+						<columns>
+							<column hflex="min" align="right" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								Username :
+								<textbox id="account" width="200px" />
+							</row>
+							<row>
+								Password :
+								<textbox id="password" type="password"
+									width="200px" />
+							</row>
+						</rows>
+					</grid>
+					<label id="message" sclass="warn" value="&#160;" />
+					<button id="login" label="Login" />
+					
+				</vbox>
+			</window>
+			(User: zkoss/admin/suhan/sashika Password:1234)
+		</vlayout>
+	</hbox>
+</zk>

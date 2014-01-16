@@ -1,4 +1,5 @@
 <?link rel="stylesheet" type="text/css" href="/style.css"?>
+<?init class="org.zkoss.essentials.login.AuthenticationInit"?>
 <zk>
     <borderlayout hflex="1" vflex="1">
         <north height="82px" border="none" >
@@ -9,7 +10,7 @@
 
                 <label value="Race by Race" sclass="head2"/>
                 <hlayout>
-                    <a href="/rbr/main/indexViewChits.zul">Enter</a>
+                    <a href="/rbr/races/raceView-mvc.zul">You are already logged in... Enter</a>
                 </hlayout>
             </vbox>
         </center>

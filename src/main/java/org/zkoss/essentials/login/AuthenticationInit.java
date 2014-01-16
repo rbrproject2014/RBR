@@ -1,14 +1,8 @@
-/* 
-	Description:
-		ZK Essentials
-	History:
-		Created by dennis
-
-Copyright (C) 2012 Potix Corporation. All Rights Reserved.
+/*
+	User session validation at each page
+	Created by Suhan
 */
-package org.zkoss.essentials.chapter8;
-
-import java.util.Map;
+package org.zkoss.essentials.login;
 
 import org.zkoss.essentials.services.AuthenticationService;
 import org.zkoss.essentials.services.UserCredential;
@@ -18,6 +12,8 @@ import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zk.ui.util.Initiator;
+
+import java.util.Map;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class AuthenticationInit implements Initiator {

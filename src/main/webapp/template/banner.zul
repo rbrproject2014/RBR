@@ -10,8 +10,13 @@
             <!--<label value="      Race by Race..." sclass="banner-head" />-->
             <!--&lt;!&ndash;<label value="      Test application..." sclass="banner-head" />&ndash;&gt;-->
         <!--</div>-->
-        <hbox hflex="1" vflex="1" pack="end" align="end">
-            Anonymous
+        <!--<hbox hflex="1" vflex="1" pack="end" align="end">-->
+            <!--Anonymous-->
+        <!--</hbox>-->
+        <hbox apply="org.zkoss.essentials.login.LogoutController"
+              hflex="1" vflex="1" pack="end" align="end" >
+            <label value="${sessionScope.userCredential.name}" if="${not sessionScope.userCredential.anonymous}"/>
+            <label id="logout" value="Logout" if="${not sessionScope.userCredential.anonymous}" sclass="logout"/>
         </hbox>
     </hbox>
 </div>

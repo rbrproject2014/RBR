@@ -5,16 +5,16 @@
     </columns>
     <rows>
         <row>
-            <image src="/imgs/demo.png"/><a href="//rbr/main/index.zul">Add/Update Races</a>
+            <image src="/imgs/demo.png"/><a href="//rbr/races/raceEntry-mvc.zul">Add/Update Races</a>
         </row>
         <row>
-            <image src="/imgs/demo.png"/><a href="//rbr/main/indexViewRaces.zul">View Today's Races</a>
+            <image src="/imgs/demo.png"/><a href="//rbr/races/raceView-mvc.zul">View Today's Races</a>
         </row>
         <row>
-            <image src="/imgs/doc.png"/><a href="//rbr/main/indexChit.zul">Enter Chit Details</a>
+            <image src="/imgs/doc.png"/><a href="//rbr/chits/chitEntry-mvc.zul">Enter Chit Details</a>
         </row>
         <row>
-            <image src="/imgs/doc.png"/><a href="//rbr/main/indexViewChits.zul">View Today's Bets</a>
+            <image src="/imgs/doc.png"/><a href="//rbr/chits/chitView-mvc.zul">View Today's Bets</a>
         </row>
     </rows>
 </grid>

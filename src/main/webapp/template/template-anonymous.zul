@@ -1,0 +1,14 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<zk>
+<borderlayout hflex="1" vflex="1">
+    <north height="82px" border="none" >
+        <include src="//template/banner.zul"/>
+    </north>
+    <center id="mainContent" autoscroll="true" border="none" self="@insert(content)">
+        <!-- the main content will be insert to here -->
+    </center>
+    <south height="40px" border="none">
+        <include src="//template/footer.zul"/>
+    </south>
+</borderlayout>
+</zk>
