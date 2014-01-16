@@ -8,6 +8,9 @@
             <image src="/imgs/demo.png"/><a href="//rbr/main/index.zul">Add/Update Races</a>
         </row>
         <row>
+            <image src="/imgs/demo.png"/><a href="//rbr/main/indexViewRaces.zul">View Today's Races</a>
+        </row>
+        <row>
             <image src="/imgs/doc.png"/><a href="//rbr/main/indexChit.zul">Enter Chit Details</a>
         </row>
         <row>

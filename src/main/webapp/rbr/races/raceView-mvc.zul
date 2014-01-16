@@ -1,0 +1,120 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<window apply="org.zkoss.essentials.chapter6.mvc.raceViewController"
+        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto;">
+    <caption src="/imgs/todo.png" sclass="fn-caption" label="View Today's Races"/>
+    <borderlayout>
+        <center autoscroll="true" border="none">
+            <vlayout hflex="1" vflex="1">
+                <grid>
+                    <rows>
+                        <row>
+                            <label value = "Total Races : "/><label id="totalRacesOutput"/><label/> <label/> <label/> <label/>
+                        </row>
+                        <!--<row>-->
+                            <!--<label value = "Total Bet Value: "/><label id="totalBetValueOutput"/><label/> <label/> <label/> <label/>-->
+                        <!--</row>-->
+                    </rows>
+                </grid>
+                <listbox id="raceListbox" checkmark="false" multiple="true" vflex="true">
+                    <!--<auxhead>-->
+                        <!--<auxheader>Race details for the Chit1</auxheader>-->
+                    <!--</auxhead>-->
+                    <listhead>
+                        <listheader label="Serial No."/>
+                        <listheader label="Race ID"/>
+                        <listheader label="Meeting Place"/>
+                        <listheader label="Date"/>
+                        <listheader label="Time"/>
+                        <listheader label="Number of Horses"/>
+                        <listheader label="1st Place Amount"/>
+                        <listheader label="2nd Place Amount"/>
+                        <listheader label="3rd Place Amount"/>
+                        <listheader label="4th Place Amount"/>
+                        <listheader label="Winner's win Amount"/>
+                        <listheader label="Delete Race"/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <listcell>
+                                <label value="${each.raceSerialNo}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.raceId}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.meetingPlace}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.raceDate}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.raceTime}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.numberOfHorses}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.firstPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.secondPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.thirdPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.fourthPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.winnersWinAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=raceListbox.onRaceDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+                <listbox id="raceDetailsListbox" checkmark="false" multiple="true" vflex="true">
+                    <!--<auxhead>-->
+                    <!--<auxheader>Race details for the Chit1</auxheader>-->
+                    <!--</auxhead>-->
+                    <listhead>
+                        <listheader label="Race Serial No"/>
+                        <listheader label="Horse ID"/>
+                        <listheader label="Jockey"/>
+                        <listheader label="Trainer"/>
+                        <listheader label="Result Position"/>
+                        <listheader label="Draw"/>
+                        <listheader label="Delete Race Detail(Horse)"/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <listcell>
+                                <label value="${each.race.raceSerialNo}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.horseId}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.jockey}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.trainer}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.resultPosition}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.draw}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=raceDetailsListbox.onRaceDetailDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+            </vlayout>
+        </center>
+
+    </borderlayout>
+</window>

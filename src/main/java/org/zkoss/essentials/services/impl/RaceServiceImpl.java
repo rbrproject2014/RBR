@@ -62,6 +62,10 @@ public class RaceServiceImpl implements RaceService {
         return raceDetailDao.getRaceDetailsToBeRemovedLOV(raceDetail);
     }
 
+    public List<RaceDetail> getRaceDetailByRaceSerialNo(long raceSerialNo){
+        return raceDetailDao.getRaceDetailsPerGivenRaceID(raceSerialNo);
+    }
+
 
     @Override
     @Transactional

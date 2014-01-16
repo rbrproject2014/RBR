@@ -21,6 +21,7 @@ public interface RaceService {
     public List<Race> getRaceListByDate(Date date);
     public List<Race> getRaceListByMeetingPlace(String meetingPlace);
     public List<RaceDetail> getRaceDetailListByRaceDate(Date date);
+    public List<RaceDetail> getRaceDetailByRaceSerialNo(long raceSerialNo);
 
     public Race getRace(Long id);
     public Race saveRace(Race race);
