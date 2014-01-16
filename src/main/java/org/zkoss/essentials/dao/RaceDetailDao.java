@@ -39,20 +39,20 @@ public class RaceDetailDao {
     public List<RaceDetail> getRaceDetailsPerGivenRaceID(long raceSerialNo){
         Query query = em.createQuery("SELECT e FROM RaceDetail e JOIN e.race r WHERE r.raceSerialNo=:d");
         query.setParameter("d",raceSerialNo);
-        /******************* Debug Code **************************************/
         List<RaceDetail> raceDetailList = query.getResultList();
-        Iterator<RaceDetail> iterator = raceDetailList.iterator();
-        while (iterator.hasNext()){
-            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^ "+iterator.next().getHorseId());
-        }
+        /******************* Debug Code **************************************/
+//        Iterator<RaceDetail> iterator = raceDetailList.iterator();
+//        while (iterator.hasNext()){
+//            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^ "+iterator.next().getHorseId());
+//        }
         /*********************************************************************/
         return raceDetailList;
     }
 
     public List<RaceDetail> getRaceDetailsToBeRemovedLOV(RaceDetail raceDetail){
-        System.out.println("**************************************************************");
+        //System.out.println("**************************************************************");
         long raceSerialNo = raceDetail.getRace().getRaceSerialNo();
-        System.out.println("raceSerialNo: "+raceSerialNo);
+        //System.out.println("raceSerialNo: "+raceSerialNo);
         return getRaceDetailsPerGivenRaceID(raceSerialNo);
     }
 

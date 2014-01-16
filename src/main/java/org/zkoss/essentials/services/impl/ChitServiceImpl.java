@@ -71,7 +71,7 @@ public class ChitServiceImpl implements ChitService {
     //@Override
     public List<Chit> getAllChits() {
         List<Chit> chitList = chitDao.queryAll();
-        System.out.println(" ------------- Query all Chit results:"+ chitList.size());
+        //System.out.println(" ------------- Query all Chit results:"+ chitList.size());
         return chitList;
     }
 
@@ -87,13 +87,13 @@ public class ChitServiceImpl implements ChitService {
 
     public List<ChitCombination> getAllChitCombinationsByChitID(long chitID) {
         List<ChitCombination> chitCombinationListList = chitCombinationDao.queryAllByChitID(chitID);
-        System.out.println(" ------------- Query all Chit Combinations:"+ chitCombinationListList.size());
+        //System.out.println(" ------------- Query all Chit Combinations:"+ chitCombinationListList.size());
         return chitCombinationListList;
     }
 
     public List<ChitCombinationDetail> getAllChitCombinationDetailsByChitCombinationID(long chitCombinationID) {
         List<ChitCombinationDetail> chitCombinationDetailList = chitCombinationDetailDao.queryAllByChitCombinationID(chitCombinationID);
-        System.out.println(" ------------- Query all Chit Combination Details:"+ chitCombinationDetailList.size());
+        //System.out.println(" ------------- Query all Chit Combination Details:"+ chitCombinationDetailList.size());
         return chitCombinationDetailList;
     }
 

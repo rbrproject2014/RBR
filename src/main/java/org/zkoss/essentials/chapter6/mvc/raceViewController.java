@@ -4,14 +4,13 @@ import org.zkoss.essentials.entity.*;
 import org.zkoss.essentials.services.ChitService;
 import org.zkoss.essentials.services.RaceService;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.ForwardEvent;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
-import org.zkoss.zul.Label;
-import org.zkoss.zul.ListModelList;
-import org.zkoss.zul.Listbox;
+import org.zkoss.zul.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +24,7 @@ import java.util.List;
  */
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class raceViewController extends SelectorComposer<Component>{
+    Race race = new Race();
     @Wire
     Listbox raceListbox;
     @Wire
@@ -33,9 +33,8 @@ public class raceViewController extends SelectorComposer<Component>{
     Label totalRacesOutput;
 
     //data for the view
-    List<Chit> chits = new ArrayList<Chit>();
-    List<ChitCombination> chitCombinations = new ArrayList<ChitCombination>();
-    List<ChitCombinationDetail> chitCombinationDetails = new ArrayList<ChitCombinationDetail>();
+    List<Race> races = new ArrayList<Race>();
+    List<RaceDetail> raceDetailss = new ArrayList<RaceDetail>();
     ListModelList<Race> raceListModelList;
     ListModelList<RaceDetail> raceDetailListModelList;
     Chit chit;
@@ -67,6 +66,27 @@ public class raceViewController extends SelectorComposer<Component>{
         raceDetailListModelList.clear();
         raceDetailListModelList.addAll(raceService.getRaceDetailByRaceSerialNo(raceListModelList.getSelection().iterator().next().getRaceSerialNo()));
         raceDetailsListbox.setModel(raceDetailListModelList);
+    }
+
+    //when user clicks the delete button of each race on the list
+    @Listen("onRaceDelete = #raceListbox")
+    public void doRaceDelete(ForwardEvent evt){
+        Button btn = (Button)evt.getOrigin().getTarget();
+        Listitem listitem = (Listitem)btn.getParent().getParent();
+
+        race = listitem.getValue();
+        System.out.println(">>>>>>>>> Race to remove:"+race.getRaceId());
+        //raceService.deleteRace(race);
+        //raceListModelList.addAll(raceService.getRaceList());
+        //raceListbox.setModel(raceListModelList);
+
+        raceListModelList.remove(race);
+        raceDetailListModelList.clear();
+
+        //ERROR
+        //failed to lazily initialize a collection of role: org.zkoss.essentials.entity.Race.raceDetails, no session or session was closed
+        //raceService.deleteRace(race);
+
     }
 
 }

@@ -331,7 +331,7 @@ public class chitEntryController extends SelectorComposer<Component>{
                 @Override
                 public void onEvent(Messagebox.ClickEvent clickEvent) throws Exception {
                     if(Messagebox.ON_YES == clickEvent.getName()){
-                        Executions.sendRedirect("/rbr/main/indexChit.zul");
+                        Executions.sendRedirect("//rbr/chits/chitEntry-mvc.zul");
                     }
                     else if (Messagebox.ON_NO == clickEvent.getName()){
                         return;
@@ -340,7 +340,7 @@ public class chitEntryController extends SelectorComposer<Component>{
             });
         }
         else{
-            Executions.sendRedirect("/rbr/main/indexChit.zul");
+            Executions.sendRedirect("//rbr/chits/chitEntry-mvc.zul");
         }
 
     }

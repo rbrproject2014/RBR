@@ -54,7 +54,7 @@ public class RaceServiceImpl implements RaceService {
     @Override
     public List<RaceDetail> getRaceDetailListByRaceDate(Date date) {
         List<RaceDetail> raceDetailList = raceDetailDao.queryAll();
-        System.out.println(" ------------- Query all results:"+ raceDetailList.size());
+        //System.out.println(" ------------- Query all results:"+ raceDetailList.size());
         return raceDetailList;
     }
 

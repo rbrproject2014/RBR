@@ -2,8 +2,8 @@
     <hbox hflex="1" vflex="1" align="center">
         <hbox align="center">
             <a href="http://www.sportinglife.com/racing/results/">
-                <!--<image src="/imgs/HorseLsssogo.png" width="50px" />-->
-                    <image src="/imgs/banner2.png"/>
+                <image src="/imgs/HorseLsssogo.png" width="50px" />
+                    <!--<image src="/imgs/banner2.png"/>-->
             </a>
         </hbox>
         <!--<div width="400px">-->
