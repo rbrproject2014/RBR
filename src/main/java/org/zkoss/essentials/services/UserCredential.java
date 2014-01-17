@@ -37,9 +37,14 @@ public class UserCredential implements Serializable{
 		return hasRole("anonymous") || "anonymous".equals(account);
 	}
 
-    //used to render menu items in side bar
+    //used to render menu items in sidebar
+    //Allowed roles for admin privileges: SUPER, ADMIN
     public boolean isAdmin(){
-        return ("ADMIN".equalsIgnoreCase(role));
+        return (!"USER".equalsIgnoreCase(role) && role!=null);
+    }
+
+    public boolean isRoot(){
+        return ("ROOT".equalsIgnoreCase(role));
     }
 
 	public String getAccount() {

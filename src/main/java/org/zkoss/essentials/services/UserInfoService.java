@@ -10,6 +10,8 @@ package org.zkoss.essentials.services;
 
 import org.zkoss.essentials.entity.User;
 
+import java.util.List;
+
 public interface UserInfoService {
 
 	/** find user by account **/
@@ -19,4 +21,6 @@ public interface UserInfoService {
 	public User updateUser(User user);
 
     public String getUserRole(String account);
+    public User saveUser(User user);
+    public List<User> getAllUsers();
 }

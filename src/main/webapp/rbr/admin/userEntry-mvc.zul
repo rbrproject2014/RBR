@@ -1,0 +1,96 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<?init class="org.zkoss.essentials.login.AuthenticationInit"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/template-rbr.zul"?>
+<window apply="org.zkoss.essentials.chapter6.mvc.userEntryController"
+        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto;"  self="@define(content)">
+    <caption src="/imgs/todo.png" sclass="fn-caption" label="User Management"/>
+    <borderlayout>
+        <center autoscroll="true" border="none">
+            <vlayout hflex="1" vflex="1">
+                <vbox align="east" hflex="1">
+                    <grid>
+                        <!--<columns>-->
+                        <!--<column hflex="1" label="Win" align="center"/>-->
+                        <!--<column hflex="2" label="Place" align="center" />-->
+                        <!--</columns>-->
+                        <rows>
+                            <row>
+                                <cell> <label value = "Account "/><textbox id="accountInput" onOK="passwordInput.focus();"/></cell>
+                                <cell> <label value = "Password "/><textbox id="passwordInput" onOK="fullNameInput.focus();" type="password"/></cell>
+                                <cell> <label value = "Full name "/><textbox id="fullNameInput" onOK="emailInput.focus();"/></cell>
+                                <cell> <label value = "Email "/><textbox id="emailInput" onOK="roleInput.focus();"/></cell>
+                                <cell> <label value = "Role "/><textbox id="roleInput" onOK="saveUser.focus();"/></cell>
+                                <cell> <button id="newUser" label="New User"/></cell>
+                                <cell> <button id="saveUser" label="Save User"/></cell>
+                            </row>
+                        </rows>
+                    </grid>
+                </vbox>
+                <listbox id="userListbox" hflex="2" vflex="true">
+                    <!--<auxhead>-->
+                        <!--<auxheader colspan="3">Race combinations</auxheader>-->
+                    <!--</auxhead>-->
+                    <listhead>
+                        <listheader label="Account"/>
+                        <listheader label="Password" />
+                        <listheader label="Full name" />
+                        <listheader label="Email" />
+                        <listheader label="Role" />
+                        <listheader label="Delete User" />
+                    </listhead>
+                    <template name="model">
+                        <listitem value="${each}">
+                            <listcell>
+                                <label value="${each.account}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.password}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.fullName}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.email}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.role}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=userListbox.onUserDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+            </vlayout>
+        </center>
+
+    </borderlayout>
+    <!--<zk>-->
+        <!--<popup id="mail" width="300px">-->
+            <!--<listbox id="userViewDetailsListbox" hflex="2" vflex="true">-->
+                <!--<auxhead>-->
+                    <!--<auxheader colspan="3">Race combinations</auxheader>-->
+                <!--</auxhead>-->
+                <!--<listhead>-->
+                    <!--<listheader label="Combined races" />-->
+                    <!--<listheader label="Win or Place" />-->
+                    <!--<listheader label="Bet amount" />-->
+                <!--</listhead>-->
+                <!--<template name="model">-->
+                    <!--<listitem value="${each}">-->
+                        <!--<listcell>-->
+                            <!--<label value="${each.raceDetail.horseId}"/>-->
+
+                        <!--</listcell>-->
+                        <!--<listcell>-->
+                            <!--<label value="${each.raceDetail.jockey}"/>-->
+                        <!--</listcell>-->
+                        <!--<listcell>-->
+                            <!--<label value="${each.raceDetail.trainer}"/>-->
+                        <!--</listcell>-->
+                    <!--</listitem>-->
+                <!--</template>-->
+            <!--</listbox>-->
+        <!--</popup>-->
+    <!--</zk>-->
+</window>

@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b28450-de54-4600-b081-9937d191e0a0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/rbr/admin/userEntry-mvc.zul" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/userEntryController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/AuthenticationServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/AuthenticationServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserCredential.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserCredential.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserInfoService.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserInfoService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserInfoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserInfoServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/import.sql" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.zul" afterPath="$PROJECT_DIR$/src/main/webapp/index.zul" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.zul" afterPath="$PROJECT_DIR$/src/main/webapp/login.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/template/sidebar.zul" afterPath="$PROJECT_DIR$/src/main/webapp/template/sidebar.zul" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -24,7 +29,7 @@
     <file path="/User.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1384904726875" ignored="false" />
     <file path="/ChitCombination.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388078108110" ignored="false" />
     <file path="/ChitCombinationDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389415232662" ignored="false" />
-    <file path="/import.sql" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389936405132" ignored="false" />
+    <file path="/import.sql" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389956587030" ignored="false" />
     <file path="/TodoDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1385739368702" ignored="false" />
     <file path="/Race.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388072326447" ignored="false" />
     <file path="/ChitDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388075607549" ignored="false" />
@@ -38,7 +43,7 @@
     <file path="/RaceServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389872910172" ignored="false" />
     <file path="/chit-entry.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1385891328250" ignored="false" />
     <file path="/chitEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389764141366" ignored="false" />
-    <file path="/fragment.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389851515109" ignored="false" />
+    <file path="/fragment.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389949553916" ignored="false" />
     <file path="/banner.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389864187262" ignored="false" />
     <file path="/SidebarChapter4Controller.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387775403280" ignored="false" />
     <file path="$PROJECT_DIR$/../zkessentials-master/src/main/java/org/zkoss/essentials/chapter6/mvc/ChitController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388035028191" ignored="false" />
@@ -48,18 +53,18 @@
     <file path="/HorseServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387877822929" ignored="false" />
     <file path="/RaceDetail.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1387900802719" ignored="false" />
     <file path="/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389353443611" ignored="false" />
-    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389939805586" ignored="false" />
+    <file path="/Dummy.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389953246763" ignored="false" />
     <file path="/betwindow.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388041032609" ignored="false" />
     <file path="/horseEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210578263" ignored="false" />
     <file path="/raceEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388744034465" ignored="false" />
     <file path="/HorseController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388210939023" ignored="false" />
     <file path="/horselist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389336159026" ignored="false" />
     <file path="D:/RaceByRace/zkessentials-master/src/main/webapp/chapter6/chitlist-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1388741119415" ignored="false" />
-    <file path="/sidebar.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389943921039" ignored="false" />
+    <file path="/sidebar.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389956610102" ignored="false" />
     <file path="/indexViewChits.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389451052892" ignored="false" />
     <file path="/chitViewController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389710625653" ignored="false" />
     <file path="/chitview-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389419577239" ignored="false" />
-    <file path="/index.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389864021687" ignored="false" />
+    <file path="/index.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389951661522" ignored="false" />
     <file path="/footer.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389445617807" ignored="false" />
     <file path="/indexChit.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389451179216" ignored="false" />
     <file path="/style.css" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389458248634" ignored="false" />
@@ -69,12 +74,15 @@
     <file path="/indexViewRaces.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389852365155" ignored="false" />
     <file path="/chitEntry-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389863121762" ignored="false" />
     <file path="/raceEntry-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389856588885" ignored="false" />
-    <file path="/login.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389863611464" ignored="false" />
+    <file path="/login.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389956625999" ignored="false" />
     <file path="/AuthenticationInit.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389863547735" ignored="false" />
     <file path="/readme.txt" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389865112291" ignored="false" />
-    <file path="/UserInfoServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389942361256" ignored="false" />
-    <file path="/AuthenticationServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389943345641" ignored="false" />
-    <file path="/UserCredential.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389943861725" ignored="false" />
+    <file path="/UserInfoServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389951369802" ignored="false" />
+    <file path="/AuthenticationServiceImpl.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389944405164" ignored="false" />
+    <file path="/UserCredential.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389956603005" ignored="false" />
+    <file path="/userEntryController.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389954306862" ignored="false" />
+    <file path="/userEntry-mvc.zul" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389954405063" ignored="false" />
+    <file path="/UserDao.java" changelist="88b28450-de54-4600-b081-9937d191e0a0" time="1389950829830" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +97,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -125,7 +134,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -135,37 +143,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="template-rbr.zul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/template-rbr.zul">
+      <file leaf-file-name="index.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="50" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+            <state line="12" column="44" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java">
+      <file leaf-file-name="login.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/login.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="5" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.zul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/sidebar.zul">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="186" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="banner.zul" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/banner.zul">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="48" selection-start="185" selection-end="260" vertical-scroll-proportion="0.06834171">
+            <state line="32" column="28" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,25 +164,75 @@
       <file leaf-file-name="import.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/import.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="108" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.0">
+            <state line="2" column="117" selection-start="158" selection-end="162" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticationServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/AuthenticationServiceImpl.java">
+      <file leaf-file-name="userEntry-mvc.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/rbr/admin/userEntry-mvc.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="10" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
+            <state line="24" column="88" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInfoService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserInfoService.java">
+      <file leaf-file-name="sidebar.zul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/sidebar.zul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="46" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
+            <state line="22" column="33" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="banner.zul" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/banner.zul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="114" selection-start="654" selection-end="654" vertical-scroll-proportion="0.20502512">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCredential.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserCredential.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="25" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userEntryController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/userEntryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="95" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1494#1500#0" expanded="true" />
+                <element signature="e#2937#3425#0" expanded="true" />
+                <element signature="e#3410#3411#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chitEntryController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="143" column="105" selection-start="5231" selection-end="5231" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserInfoServiceImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserInfoServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="57" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -218,20 +258,20 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/RaceDetailDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/dao/ChitCombinationDetailDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/RaceServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/login/LogoutController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/import.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/template-rbr.zul" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/AuthenticationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.zul" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/userEntryController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/rbr/admin/userEntry-mvc.zul" />
+        <option value="$PROJECT_DIR$/src/main/resources/import.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserCredential.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/AuthenticationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.zul" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/sidebar.zul" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/banner.zul" />
       </list>
@@ -388,6 +428,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -537,6 +578,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="chits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="essentials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RBR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rbr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -943,18 +1014,17 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="275" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="292" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="292" />
     <property name="options.splitter.main.proportions" value="0.2975" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="297" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="297" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/zkoss/essentials" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="299" />
@@ -976,8 +1046,8 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -985,11 +1055,15 @@
       <recent name="org.zkoss.essentials.chapter4" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\rbr\admin" />
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\main" />
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\java\org\zkoss\essentials\login" />
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\template" />
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\rbr\main" />
-      <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\rbr\races" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.zkoss.essentials.chapter6.mvc" />
+      <recent name="org.zkoss.essentials.view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp" />
@@ -997,10 +1071,6 @@
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\rbr\races" />
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\rbr\chits" />
       <recent name="C:\Users\suhand\Documents\GitHub\RBR\src\main\webapp\rbr\main" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.zkoss.essentials.chapter6.mvc" />
-      <recent name="org.zkoss.essentials.view" />
     </key>
   </component>
   <component name="RunManager">
@@ -1040,6 +1110,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1065,19 +1148,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1352,112 +1422,117 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/ChitServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="18" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/raceViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="10" selection-start="3290" selection-end="3290" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter8/LogoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="633" selection-end="633" vertical-scroll-proportion="0.11959799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter8/AuthenticationInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="47" selection-start="1088" selection-end="1098" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/rbr/chits/chitEntry-mvc.zul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="71" column="4" selection-start="2290" selection-end="2493" vertical-scroll-proportion="0.40201005">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="23" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+        <state line="40" column="105" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/template-rbr.zul">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/ChitService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="50" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="5" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.0">
+        <state line="16" column="17" selection-start="418" selection-end="418" vertical-scroll-proportion="0.1879397">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="46" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
+        <state line="24" column="36" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserCredential.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="23" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
+        <state line="156" column="44" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.96582913">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/zkoss/zk/zk/6.5.1/zk-6.5.1.jar!/org/zkoss/zk/ui/select/annotation/Listen.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="18" selection-start="331" selection-end="331" vertical-scroll-proportion="0.12268041">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/UserInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="83" selection-start="993" selection-end="993" vertical-scroll-proportion="0.3758794">
+        <state line="47" column="57" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/login/LogoutController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/chitEntryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="630" selection-end="630" vertical-scroll-proportion="0.11959799">
+        <state line="143" column="105" selection-start="5231" selection-end="5231" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/chapter6/mvc/userEntryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="95" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1494#1500#0" expanded="true" />
+            <element signature="e#2937#3425#0" expanded="true" />
+            <element signature="e#3410#3411#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/import.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="108" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.0">
+        <state line="2" column="117" selection-start="158" selection-end="162" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/impl/AuthenticationServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/zkoss/essentials/services/UserCredential.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="10" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
+        <state line="45" column="25" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="44" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="28" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/rbr/admin/userEntry-mvc.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="88" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/template/sidebar.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="186" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
+        <state line="22" column="33" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/template/banner.zul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="48" selection-start="185" selection-end="260" vertical-scroll-proportion="0.06834171">
+        <state line="12" column="114" selection-start="654" selection-end="654" vertical-scroll-proportion="0.20502512">
           <folding />
         </state>
       </provider>

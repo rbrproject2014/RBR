@@ -30,7 +30,7 @@
 					
 				</vbox>
 			</window>
-			(User: zkoss/admin/suhan/sashika Password:1234)
+			(User: root(ROOT)/admin(ADMIN)/suhan,sashika(USER) Password:1234)
 		</vlayout>
 	</hbox>
 </zk>

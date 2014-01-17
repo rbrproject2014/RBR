@@ -153,4 +153,8 @@ public class User implements Serializable,Cloneable {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
 }

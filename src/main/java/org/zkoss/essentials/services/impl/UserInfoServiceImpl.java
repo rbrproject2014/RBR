@@ -9,6 +9,7 @@ Copyright (C) 2012 Potix Corporation. All Rights Reserved.
 package org.zkoss.essentials.services.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.zkoss.essentials.entity.User;
 import org.zkoss.essentials.services.UserInfoService;
@@ -36,5 +37,14 @@ public class UserInfoServiceImpl implements UserInfoService,Serializable{
     public String getUserRole(String account){
         User user = dao.get(account);
         return user.getRole();
+    }
+
+    public User saveUser(User user){
+        return dao.save(user);
+    }
+
+    public List<User> getAllUsers() {
+        List<User> userList = dao.queryAll();
+        return userList;
     }
 }

@@ -16,5 +16,8 @@
         <row>
             <image src="/imgs/doc.png"/><a href="//rbr/chits/chitView-mvc.zul">View Today's Bets</a>
         </row>
+        <row>
+            <image src="/imgs/doc.png"  if="${sessionScope.userCredential.root}"/><a href="//rbr/admin/userEntry-mvc.zul" if="${sessionScope.userCredential.root}">User Management</a>
+        </row>
     </rows>
 </grid>

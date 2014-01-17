@@ -10,7 +10,7 @@
 
                 <label value="Race by Race" sclass="head2"/>
                 <hlayout>
-                    <a href="/rbr/races/raceView-mvc.zul">You are already logged in... Enter</a>
+                    <a href="/rbr/chits/chitView-mvc.zul">You are already logged in... Enter</a>
                 </hlayout>
             </vbox>
         </center>
