@@ -19,5 +19,8 @@
         <row>
             <image src="/imgs/doc.png"  if="${sessionScope.userCredential.root}"/><a href="//rbr/admin/userEntry-mvc.zul" if="${sessionScope.userCredential.root}">User Management</a>
         </row>
+        <row>
+            <image src="/imgs/doc.png"  if="${sessionScope.userCredential.root}"/><a href="//rbr/admin/rolePriv-mvc.zul" if="${sessionScope.userCredential.root}">User Role view</a>
+        </row>
     </rows>
 </grid>
