@@ -47,4 +47,8 @@ public class UserInfoServiceImpl implements UserInfoService,Serializable{
         List<User> userList = dao.queryAll();
         return userList;
     }
+
+    public void deleteUser(User user){
+        dao.delete(user);
+    }
 }

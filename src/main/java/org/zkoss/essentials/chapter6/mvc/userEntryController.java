@@ -112,7 +112,19 @@ public class userEntryController extends SelectorComposer<Component>{
     public void enableSaveUserButton(){
         newUser.setDisabled(false);
         saveUser.setDisabled(false);
-}
+    }
+
+    //when user clicks the delete button of each user on the list
+    @Listen("onUserDelete = #userListbox")
+    public void doChitCombinationDetailDelete(ForwardEvent evt){
+        Button btn = (Button)evt.getOrigin().getTarget();
+        Listitem listitem = (Listitem)btn.getParent().getParent();
+        user = listitem.getValue();
+        userListModelList.remove(user);
+        userInfoService.deleteUser(user);
+        System.out.println(">>>>>>>>> User to remove:"+user.getFullName());
+
+    }
 
 //    /*
 //    * After entering value in the place input value OR
@@ -295,25 +307,7 @@ public class userEntryController extends SelectorComposer<Component>{
 //    }
 //
 //
-//    //when user clicks the delete button of each race detail on the list
-//    @Listen("onHorseDelete = #emptyHorseListbox")
-//    public void doChitCombinationDetailDelete(ForwardEvent evt){
-//        Button btn = (Button)evt.getOrigin().getTarget();
-//        Listitem listitem = (Listitem)btn.getParent().getParent();
-//
-//        RaceDetail raceDetail = listitem.getValue();
-//        raceDetails.remove(raceDetail);
-//        listModelList = new ListModelList<RaceDetail>(raceDetails);
-//        listModelList.setMultiple(true);
-//        emptyHorseListbox.setModel(listModelList);
-//
-////        ListModelList<RaceDetail> raceDetailsLOV = new ListModelList<RaceDetail>(raceService.getRaceDetailListByRaceDate(new Date()));
-////        raceDetailsLOV.removeAll(listModelList);
-////        combo.setModel(raceDetailsLOV);
-//        combo.setModel(getNewRaceDetailLOV());
-//        System.out.println(">>>>>>>>> Horse ID to remove:"+raceDetail.getHorseId());
-//
-//    }
+
 //
 
 //

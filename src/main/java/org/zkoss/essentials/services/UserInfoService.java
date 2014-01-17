@@ -23,4 +23,5 @@ public interface UserInfoService {
     public String getUserRole(String account);
     public User saveUser(User user);
     public List<User> getAllUsers();
+    public void deleteUser(User user);
 }

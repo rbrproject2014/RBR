@@ -38,4 +38,13 @@ public class UserDao {
         List<User> list = query.getResultList();
         return list;
     }
+
+    //prob here, user is not deleted yet???
+    public void delete(User user){
+        User u = get(user.getAccount());
+        System.out.println("============ user deleted: "+u.getAccount());
+        if(u != null){
+            em.remove(u);
+        }
+    }
 }

@@ -15,13 +15,30 @@
                         <!--</columns>-->
                         <rows>
                             <row>
-                                <cell> <label value = "Account "/><textbox id="accountInput" onOK="passwordInput.focus();"/></cell>
-                                <cell> <label value = "Password "/><textbox id="passwordInput" onOK="fullNameInput.focus();" type="password"/></cell>
-                                <cell> <label value = "Full name "/><textbox id="fullNameInput" onOK="emailInput.focus();"/></cell>
-                                <cell> <label value = "Email "/><textbox id="emailInput" onOK="roleInput.focus();"/></cell>
-                                <cell> <label value = "Role "/><textbox id="roleInput" onOK="saveUser.focus();"/></cell>
+                                <label value = "Account "/>
+                                <label value = "Password "/>
+                                <label value = "Full name "/>
+                                <label value = "Email "/>
+                                <label value = "Role "/>
+                            </row>
+                            <row>
+                                <cell> <textbox id="accountInput" onOK="passwordInput.focus();"/></cell>
+                                <cell> <textbox id="passwordInput" onOK="fullNameInput.focus();" type="password"/></cell>
+                                <cell> <textbox id="fullNameInput" onOK="emailInput.focus();"/></cell>
+                                <cell> <textbox id="emailInput" onOK="roleInput.focus();" constraint="/.+@.+\.[a-z]+/: Invalid e-mail address"/></cell>
+                                <cell>
+                                    <combobox id="roleInput" autodrop="true" placeholder="Select User Role" readonly="true">
+                                    <comboitem label="ROOT" />
+                                    <comboitem label="ADMIN" />
+                                    <comboitem label="USER" />
+                                </combobox></cell>
+                            </row>
+                            <row>
                                 <cell> <button id="newUser" label="New User"/></cell>
                                 <cell> <button id="saveUser" label="Save User"/></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
                             </row>
                         </rows>
                     </grid>
@@ -32,7 +49,7 @@
                     <!--</auxhead>-->
                     <listhead>
                         <listheader label="Account"/>
-                        <listheader label="Password" />
+                        <!--<listheader label="Password" />-->
                         <listheader label="Full name" />
                         <listheader label="Email" />
                         <listheader label="Role" />
@@ -43,9 +60,9 @@
                             <listcell>
                                 <label value="${each.account}"/>
                             </listcell>
-                            <listcell>
-                                <label value="${each.password}"/>
-                            </listcell>
+                            <!--<listcell>-->
+                                <!--<label value="${each.password}"/>-->
+                            <!--</listcell>-->
                             <listcell>
                                 <label value="${each.fullName}"/>
                             </listcell>
