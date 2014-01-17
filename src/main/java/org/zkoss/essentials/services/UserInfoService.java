@@ -17,4 +17,6 @@ public interface UserInfoService {
 	
 	/** update user **/
 	public User updateUser(User user);
+
+    public String getUserRole(String account);
 }

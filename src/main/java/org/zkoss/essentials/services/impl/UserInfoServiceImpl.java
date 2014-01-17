@@ -32,4 +32,9 @@ public class UserInfoServiceImpl implements UserInfoService,Serializable{
 	public User updateUser(User user){
 		return dao.update(user);
 	}
+
+    public String getUserRole(String account){
+        User user = dao.get(account);
+        return user.getRole();
+    }
 }

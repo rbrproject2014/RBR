@@ -41,8 +41,8 @@ public class User implements Serializable,Cloneable {
 	@Column(name="BIRTHDATE",nullable = true)
 	@Temporal( TemporalType.DATE)
 	Date birthday;
-	
-	@Column(name="ROLE",nullable=true,length=20)
+
+    @Column(name="ROLE",nullable=true,length=20)
 	String role;
 
     @Column(name = "BIO", nullable = true)
@@ -59,6 +59,14 @@ public class User implements Serializable,Cloneable {
 		this.fullName = fullName;
 		this.email = email;
 	}
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
 	public String getAccount() {
 		return account;

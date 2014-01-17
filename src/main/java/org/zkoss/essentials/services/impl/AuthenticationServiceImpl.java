@@ -39,8 +39,10 @@ public class AuthenticationServiceImpl implements AuthenticationService,Serializ
 		}
 		
 		Session sess = Sessions.getCurrent();
-		UserCredential cre = new UserCredential(user.getAccount(),user.getFullName());
+		UserCredential cre = new UserCredential(user.getAccount(),user.getFullName(),user.getRole());
 		sess.setAttribute("userCredential",cre);
+
+        //System.out.println(" Login info (Role)-------->>>>>>  "+user.getRole());
 		
 		//TODO handle the role here for authorization
 		return true;

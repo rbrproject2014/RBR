@@ -5,13 +5,13 @@
     </columns>
     <rows>
         <row>
-            <image src="/imgs/demo.png"/><a href="//rbr/races/raceEntry-mvc.zul">Add/Update Races</a>
+            <image src="/imgs/demo.png"  if="${sessionScope.userCredential.admin}"/><a href="//rbr/races/raceEntry-mvc.zul" if="${sessionScope.userCredential.admin}">Add/Update Races</a>
         </row>
         <row>
             <image src="/imgs/demo.png"/><a href="//rbr/races/raceView-mvc.zul">View Today's Races</a>
         </row>
         <row>
-            <image src="/imgs/doc.png"/><a href="//rbr/chits/chitEntry-mvc.zul">Enter Chit Details</a>
+            <image src="/imgs/doc.png"  if="${sessionScope.userCredential.admin}"/><a href="//rbr/chits/chitEntry-mvc.zul"  if="${sessionScope.userCredential.admin}">Enter Chit Details</a>
         </row>
         <row>
             <image src="/imgs/doc.png"/><a href="//rbr/chits/chitView-mvc.zul">View Today's Bets</a>

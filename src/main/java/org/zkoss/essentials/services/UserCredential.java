@@ -17,12 +17,14 @@ public class UserCredential implements Serializable{
 	
 	String account;
 	String name;
+    String role;
 	
 	Set<String> roles = new HashSet<String>();
 
-	public UserCredential(String account, String name) {
+	public UserCredential(String account, String name, String role) {
 		this.account = account;
 		this.name = name;
+        this.role = role;
 	}
 
 	public UserCredential() {
@@ -34,6 +36,11 @@ public class UserCredential implements Serializable{
 	public boolean isAnonymous() {
 		return hasRole("anonymous") || "anonymous".equals(account);
 	}
+
+    //used to render menu items in side bar
+    public boolean isAdmin(){
+        return ("ADMIN".equalsIgnoreCase(role));
+    }
 
 	public String getAccount() {
 		return account;
@@ -58,5 +65,13 @@ public class UserCredential implements Serializable{
 	public void addRole(String role){
 		roles.add(role);
 	}
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
 }
