@@ -1,7 +1,7 @@
 -- Insert samples into the database(HSQL). 
 
 insert into appuser (account, password, fullName, email, role) values ('root', '1234', 'Root', 'root@your.com', 'ROOT');
-insert into appuser (account, password, fullName, email, role) values ('admin', '1234', 'Finch', 'admin@your.com', 'ADMIN');
+insert into appuser (account, password, fullName, email, role) values ('admin', '1234', 'Harold Finch', 'admin@your.com', 'ADMIN');
 insert into appuser (account, password, fullName, email, role) values ('suhan', '1234', 'Suhan', 'suhan@zkoss.org', 'USER');
 insert into appuser (account, password, fullName, email, role) values ('sashika', '1234', 'Sashika', 'sashika@zkoss.org', 'USER');
 

@@ -7,101 +7,143 @@
     <borderlayout>
         <center autoscroll="true" border="none">
             <vlayout hflex="1" vflex="1">
-                <grid>
-                    <!--<columns>-->
-                    <!--<column hflex="1" label="Win" align="center"/>-->
-                    <!--<column hflex="2" label="Place" align="center" />-->
-                    <!--</columns>-->
-                    <rows>
-                        <row>
-                            <cell> <label value = "Race Serial Number "/><intbox id="raceSerialNoInput" onOK="meetingPlaceInput.focus();"/></cell>
-                            <cell> <label value = "Meeting Place"/><textbox id="meetingPlaceInput" onOK="horseNumberInput.focus();"/></cell>
-                            <cell> <label value = "Number of Horses"/><intbox id="horseNumberInput" format="#,##0.00" constraint="no negative: Total number of horses cannot be negative" onOK="combo.focus();"/></cell>
-                            <cell> <button id="newRace" label="New race"/></cell>
-                            <cell> <button id="saveRace" label="Save race"/></cell>
-                        </row>
-                    </rows>
-                </grid>
                 <vbox align="east" hflex="1">
-                    <hbox >
-                        <combobox id="combo" placeholder="New horse name"/>
-                        <button id="addRaceDetail" image="/imgs/plus.png" width="36px"/>
-                    </hbox>
+                    <grid>
+                        <!--<columns>-->
+                        <!--<column hflex="1" label="Win" align="center"/>-->
+                        <!--<column hflex="2" label="Place" align="center" />-->
+                        <!--</columns>-->
+                        <rows>
+                            <row>
+                                <cell> <button id="newRace" label="New Race"/></cell>
+                                <cell> <button id="saveRace" label="Save Race"/></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                            </row>
+                            <row>
+                                <cell> </cell>
+                                <cell> <textbox id="raceIdInput" onOK="meetingPlaceInput.focus();"/></cell>
+                                <cell> <textbox id="meetingPlaceInput" onOK="dateInput.focus();"/></cell>
+                                <cell colspan="2">  <datebox id="dateInput" cols="20" format="dd/MM/yyyy"  onCreate="self.value = new Date()" onOK="noOfHorsesInput.focus()"/></cell>
+
+                                <cell> <intbox id="noOfHorsesInput" onOK="onePlaceAmountInput.focus();"></intbox> </cell>
+                                <cell> <intbox id="onePlaceAmountInput" onOK="twoPlaceAmountInput.focus();"></intbox> </cell>
+                                <cell> <intbox id="twoPlaceAmountInput" onOK="threePlaceAmountInput.focus();"></intbox> </cell>
+                                <cell> <intbox id="threePlaceAmountInput" onOK="fourPlaceAmountInput.focus();"></intbox> </cell>
+                                <cell> <intbox id="fourPlaceAmountInput" onOK="winAmountInput.focus();"></intbox> </cell>
+                                <cell> <intbox id="winAmountInput" onOK="saveRace.focus();"></intbox> </cell>
+                                <cell></cell>
+                            </row>
+                        </rows>
+                    </grid>
                 </vbox>
-                <listbox id="horseListbox" vflex="1">
-                    <listhead>
-                        <!--<listheader width="30px" />-->
-                        <listheader/>
-                        <listheader hflex="min"/>
+                <listbox id="raceListbox" checkmark="false" multiple="true" vflex="true">
+                    <!--<auxhead>-->
+                    <!--<auxheader>Race details for the Chit1</auxheader>-->
+                    <!--</auxhead>-->
+                    <listhead sizable="true">
+                        <listheader label="Serial No."/>
+                        <listheader label="Race ID"/>
+                        <listheader label="Meeting Place"/>
+                        <listheader label="Date"/>
+                        <listheader label="Time"/>
+                        <listheader label="Number of Horses"/>
+                        <listheader label="1st Place Amount"/>
+                        <listheader label="2nd Place Amount"/>
+                        <listheader label="3rd Place Amount"/>
+                        <listheader label="4th Place Amount"/>
+                        <listheader label="Winner's win Amount"/>
+                        <listheader label="Delete Race"/>
                     </listhead>
                     <template name="model">
                         <listitem sclass="selected-area" value="${each}">
-                            <!--<listcell>-->
-                                <!--<checkbox forward="onCheck=horseListbox.onHorseCheck" checked="${each.complete}"/>-->
-                            <!--</listcell>-->
+                            <listcell>
+                                <label value="${each.raceSerialNo}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.raceId}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.meetingPlace}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.raceDate}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.raceTime}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.numberOfHorses}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.firstPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.secondPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.thirdPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.fourthPlaceAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.winnersWinAmount}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=raceListbox.onRaceDelete" image="/imgs/cross.png" width="36px"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+                <listbox id="raceDetailsListbox" checkmark="false" multiple="true" vflex="true">
+                    <!--<auxhead>-->
+                    <!--<auxheader>Race details for the Chit1</auxheader>-->
+                    <!--</auxhead>-->
+                    <listhead  sizable="true">
+                        <listheader label="Race Serial No"/>
+                        <listheader label="Horse ID"/>
+                        <listheader label="Jockey"/>
+                        <listheader label="Trainer"/>
+                        <listheader label="Result Position"/>
+                        <listheader label="Draw"/>
+                        <listheader label="Delete Race Detail(Horse)"/>
+                    </listhead>
+                    <template name="model">
+                        <listitem sclass="selected-area" value="${each}">
+                            <listcell>
+                                <label value="${each.race.raceSerialNo}"/>
+                            </listcell>
                             <listcell>
                                 <label value="${each.horseId}"/>
                             </listcell>
                             <listcell>
-                                <button forward="onClick=horseListbox.onHorseDelete" image="/imgs/cross.png" width="36px"/>
+                                <label value="${each.jockey}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.trainer}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.resultPosition}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.draw}"/>
+                            </listcell>
+                            <listcell>
+                                <button forward="onClick=raceDetailsListbox.onRaceDetailDelete" image="/imgs/cross.png" width="36px"/>
                             </listcell>
                         </listitem>
                     </template>
                 </listbox>
             </vlayout>
         </center>
-        <east id="selectedHorseBlock" visible="false" width="300px" border="none" collapsible="false"
-              splittable="true" minsize="300" autoscroll="true">
-            <vlayout >
-                <hbox align="center"  hflex="1">
-                    <!--<checkbox id="selectedHorseCheck"/>-->
-                    <textbox id="selectedHorseID" hflex="1" />
-                </hbox>
-                <grid hflex="1">
-                    <columns>
-                        <column align="right" hflex="min"/>
-                        <column/>
-                    </columns>
-                    <rows>
-                        <row>
-                            <cell sclass="row-title">Trainer :</cell>
-                            <cell><textbox id="selectedHorseTrainer" width="200px"/></cell>
-                        </row>
-                        <row>
-                            <cell sclass="row-title">Jockey :</cell>
-                            <cell><textbox id="selectedHorseJockey" width="200px"/></cell>
-                        </row>
-                        <row>
-                            <cell sclass="row-title">Horse Age :</cell>
-                            <cell><intbox id="selectedHorseAge" width="200px" format="#,##0" constraint="no negative: Age cannot be negative"/></cell>
-                        </row>
-                        <!--<row>-->
-                            <!--<cell sclass="row-title">Description :</cell>-->
-                            <!--<cell>-->
-                                <!--<textbox id="selectedHorseDescription" multiline="true" hflex="1" height="200px" context="editPopup"/>-->
-                            <!--</cell>-->
-                        <!--</row>-->
-                    </rows>
-                </grid>
-                <menupopup id="editPopup">
-                    <menuitem label="ClearAll" onClick="selectedHorseDescription.value=null" />
-                    <menu label="QuickText">
-                        <menupopup>
-                            <menuitem label="Maiden Horse! Yet to win a race"
-                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
-                            <menuitem label="Claimed Horse!"
-                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
-                            <menuitem label="Allowanced Horse!"
-                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
-                            <menuitem label="Stake Horse! This is a top class horse"
-                                      onClick="selectedHorseDescription.value=selectedHorseDescription.value + self.label" />
-                        </menupopup>
-                    </menu>
-                </menupopup>
-                <hlayout>
-                    <button id="saveRaceDetail" label="Update"/>
-                </hlayout>
-            </vlayout>
-        </east>
     </borderlayout>
 </window>

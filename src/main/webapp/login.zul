@@ -16,7 +16,7 @@
 						<rows>
 							<row>
 								Username :
-								<textbox id="account" width="200px" />
+								<textbox id="account" width="200px" onOK="password.focus();"/>
 							</row>
 							<row>
 								Password :

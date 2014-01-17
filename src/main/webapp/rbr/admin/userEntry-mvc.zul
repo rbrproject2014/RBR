@@ -27,7 +27,7 @@
                                 <cell> <textbox id="fullNameInput" onOK="emailInput.focus();"/></cell>
                                 <cell> <textbox id="emailInput" onOK="roleInput.focus();" constraint="/.+@.+\.[a-z]+/: Invalid e-mail address"/></cell>
                                 <cell>
-                                    <combobox id="roleInput" autodrop="true" placeholder="Select User Role" readonly="true">
+                                    <combobox id="roleInput" autodrop="true" placeholder="Select User Role" readonly="true" onOK="saveUser.focus()">
                                     <comboitem label="ROOT" />
                                     <comboitem label="ADMIN" />
                                     <comboitem label="USER" />
@@ -47,7 +47,7 @@
                     <!--<auxhead>-->
                         <!--<auxheader colspan="3">Race combinations</auxheader>-->
                     <!--</auxhead>-->
-                    <listhead>
+                    <listhead  sizable="true">
                         <listheader label="Account"/>
                         <!--<listheader label="Password" />-->
                         <listheader label="Full name" />
@@ -82,32 +82,4 @@
         </center>
 
     </borderlayout>
-    <!--<zk>-->
-        <!--<popup id="mail" width="300px">-->
-            <!--<listbox id="userViewDetailsListbox" hflex="2" vflex="true">-->
-                <!--<auxhead>-->
-                    <!--<auxheader colspan="3">Race combinations</auxheader>-->
-                <!--</auxhead>-->
-                <!--<listhead>-->
-                    <!--<listheader label="Combined races" />-->
-                    <!--<listheader label="Win or Place" />-->
-                    <!--<listheader label="Bet amount" />-->
-                <!--</listhead>-->
-                <!--<template name="model">-->
-                    <!--<listitem value="${each}">-->
-                        <!--<listcell>-->
-                            <!--<label value="${each.raceDetail.horseId}"/>-->
-
-                        <!--</listcell>-->
-                        <!--<listcell>-->
-                            <!--<label value="${each.raceDetail.jockey}"/>-->
-                        <!--</listcell>-->
-                        <!--<listcell>-->
-                            <!--<label value="${each.raceDetail.trainer}"/>-->
-                        <!--</listcell>-->
-                    <!--</listitem>-->
-                <!--</template>-->
-            <!--</listbox>-->
-        <!--</popup>-->
-    <!--</zk>-->
 </window>

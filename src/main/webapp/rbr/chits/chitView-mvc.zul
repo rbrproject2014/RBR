@@ -21,7 +21,7 @@
                     <!--<auxhead>-->
                         <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
-                    <listhead>
+                    <listhead  sizable="true">
                         <listheader label="ChitID"/>
                         <listheader label="Centre Number"/>
                         <listheader label="Serial Number"/>
@@ -56,7 +56,7 @@
                     <!--<auxhead>-->
                     <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
-                    <listhead>
+                    <listhead  sizable="true">
                         <listheader label="Chit Combination ID"/>
                         <listheader label="Bet Value"/>
                         <listheader label="Combined elements"/>
@@ -91,7 +91,7 @@
                     <!--<auxhead>-->
                     <!--<auxheader>Race details for the Chit1</auxheader>-->
                     <!--</auxhead>-->
-                    <listhead>
+                    <listhead  sizable="true">
                         <listheader label="Race Detail ID"/>
                         <listheader label="Jockey"/>
                         <listheader label="Trainer"/>

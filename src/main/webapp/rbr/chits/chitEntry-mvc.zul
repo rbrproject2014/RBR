@@ -82,7 +82,7 @@
                     <!--<auxhead>-->
                         <!--<auxheader colspan="3">Race combinations</auxheader>-->
                     <!--</auxhead>-->
-                    <listhead>
+                    <listhead  sizable="true">
                         <listheader label="View Details"/>
                         <listheader label="Combined races" />
                         <listheader label="Win or Place" />
@@ -117,7 +117,7 @@
                 <auxhead>
                     <auxheader colspan="3">Race combinations</auxheader>
                 </auxhead>
-                <listhead>
+                <listhead  sizable="true">
                     <listheader label="Combined races" />
                     <listheader label="Win or Place" />
                     <listheader label="Bet amount" />
