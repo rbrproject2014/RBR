@@ -104,6 +104,32 @@
                         </listitem>
                     </template>
                 </listbox>
+                <vbox align="east" hflex="1">
+                    <grid>
+                        <!--<columns>-->
+                        <!--<column hflex="1" label="Win" align="center"/>-->
+                        <!--<column hflex="2" label="Place" align="center" />-->
+                        <!--</columns>-->
+                        <rows>
+                            <row>
+                                <cell colspan="2"> <button id="newRaceDetail" label="New Race Detail"/></cell>
+                                <cell colspan="2"> <button id="saveRaceDetail" label="Save Race Detail"/></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                            </row>
+                            <row>
+                                <cell> </cell>
+                                <cell> <textbox id="horseIdInput" onOK="jockeyInput.focus();"/></cell>
+                                <cell> <textbox id="jockeyInput" onOK="trainerInput.focus();"/></cell>
+                                <cell> <textbox id="trainerInput" onOK="resultPositionInput.focus();"/></cell>
+                                <cell> <intbox id="resultPositionInput" onOK="drawInput.focus();"></intbox> </cell>
+                                <cell> <intbox id="drawInput" onOK="saveRaceDetail.focus();"></intbox> </cell>
+                                <cell></cell>
+                            </row>
+                        </rows>
+                    </grid>
+                </vbox>
                 <listbox id="raceDetailsListbox" checkmark="false" multiple="true" vflex="true">
                     <!--<auxhead>-->
                     <!--<auxheader>Race details for the Chit1</auxheader>-->

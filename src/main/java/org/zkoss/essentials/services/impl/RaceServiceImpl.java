@@ -88,6 +88,7 @@ public class RaceServiceImpl implements RaceService {
     @Override
     @Transactional
     public Race updateRace(Race race) {
+//        System.out.println("0000000 total race details per race "+race.getRaceDetails().size());
         return raceDao.update(race);
     }
 

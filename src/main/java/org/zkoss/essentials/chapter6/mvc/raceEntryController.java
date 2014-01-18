@@ -34,6 +34,7 @@ import java.util.List;
 public class raceEntryController extends SelectorComposer<Component>{
     private static final long serialVersionUID = 1L;
     Race race = new Race();
+    RaceDetail raceDetail = new RaceDetail();
 
     //wire components
     @Wire
@@ -57,6 +58,10 @@ public class raceEntryController extends SelectorComposer<Component>{
     @Wire
     Button saveRace;
     @Wire
+    Button newRaceDetail;
+    @Wire
+    Button saveRaceDetail;
+    @Wire
     Listbox raceListbox;
     @Wire
     Listbox raceDetailsListbox;
@@ -79,8 +84,16 @@ public class raceEntryController extends SelectorComposer<Component>{
     @Wire
     Datebox dateInput;
 
-    @WireVariable
-    ChitService chitService;
+    @Wire
+    Textbox horseIdInput;
+    @Wire
+    Textbox jockeyInput;
+    @Wire
+    Textbox trainerInput;
+    @Wire
+    Intbox resultPositionInput;
+    @Wire
+    Intbox drawInput;
 
     @WireVariable
     RaceService raceService;
@@ -94,6 +107,7 @@ public class raceEntryController extends SelectorComposer<Component>{
     ListModelList<Race> raceListModelList;
     ListModelList<RaceDetail> raceDetailListModelList;
     private boolean raceSaved = false;
+    private boolean raceDetailSaved = false;
 
     ListModelList<ChitCombination> listModelListCombinations = new ListModelList<ChitCombination>();
 
@@ -109,8 +123,11 @@ public class raceEntryController extends SelectorComposer<Component>{
         System.out.println(raceService == null ? "Race Service is null ************************" : "Race Service is not null***************");
         raceListModelList.addAll(raceService.getRaceList());
         raceListbox.setModel(raceListModelList);
+
         newRace.setDisabled(true);
         saveRace.setDisabled(true);
+        newRaceDetail.setDisabled(true);
+        saveRaceDetail.setDisabled(true);
     }
 
     //when user select one row from the Race list
@@ -163,13 +180,13 @@ public class raceEntryController extends SelectorComposer<Component>{
     }
 
     @Listen("onChanging = #raceIdInput")
-    public void enableSaveUserButton(){
+    public void enableSaveRaceButton(){
         newRace.setDisabled(false);
         saveRace.setDisabled(false);
     }
 
     @Listen("onClick = #newRace")
-    public void NewUser(){
+    public void NewRace(){
         if (!raceSaved) {
             Messagebox.show("Current Race is not saved. Are you sure you want to discard it?",new Messagebox.Button[]{Messagebox.Button.YES, Messagebox.Button.NO},new org.zkoss.zk.ui.event.EventListener<Messagebox.ClickEvent>() {
                 @Override
@@ -189,69 +206,59 @@ public class raceEntryController extends SelectorComposer<Component>{
 
     }
 
-    //when user selects a horse of the listbox
-    @Listen("onSelect = #horseListbox")
-    public void doHorseSelect() {
-        if(blankHorseListModel.isSelectionEmpty()){
-            //just in case for the no selection
-            selectedRaceDetail = null;
-        }else{
-            selectedRaceDetail = blankHorseListModel.getSelection().iterator().next();
-        }
-        refreshDetailView();
-    }
-
-    //when user clicks the update button
     @Listen("onClick = #saveRaceDetail")
-    public void doUpdateClick(){
-//        int Age = 0;
-//
-//        selectedHorse.setComplete(selectedHorseCheck.isChecked());
-//        selectedHorse.setTrainer(selectedHorseTrainer.getValue());
-//        selectedHorse.setJockey(selectedHorseJockey.getValue());
-//        selectedHorse.setAge(selectedHorseAge.getValue());
-//        selectedHorse.setDescription(selectedHorseDescription.getValue());
-//
-//        //save data and get updated Horse object
-//        selectedHorse = horseService.updateHorse(selectedHorse);
-//
-//        //replace original Horse object in listmodel with updated one
-//        horseListModel.set(horseListModel.indexOf(selectedHorse), selectedHorse);
-//
-//        //testing MySQL db write
-//        //this.submit();
-////        horseService.saveHorseDB(selectedHorseSubject.getValue().isEmpty()?null:selectedHorseSubject.getValue(),
-////                selectedHorseTrainer.getValue().isEmpty()?null:selectedHorseTrainer.getValue(),
-////                selectedHorseJockey.getValue().isEmpty()?null:selectedHorseJockey.getValue(),
-////                selectedHorseAge.intValue(),
-////                selectedHorseDescription.getValue().isEmpty()?null:selectedHorseDescription.getValue()
-////                );
-//        //chit detail successful method show user
-//        Clients.showNotification("Chit detail saved");
+    public void saveRaceDetail(){
+
+        raceDetail.setHorseId(horseIdInput.getValue());
+        raceDetail.setJockey(jockeyInput.getValue());
+        raceDetail.setTrainer(trainerInput.getValue());
+        raceDetail.setResultPosition(new BigDecimal(resultPositionInput.getValue()));
+        raceDetail.setDraw(new BigDecimal(drawInput.getValue()));
+
+        race = raceListModelList.getSelection().iterator().next();
+        BigDecimal newNumberOfHorses = new BigDecimal(0);
+        newNumberOfHorses = race.getNumberOfHorses().add(new BigDecimal(1));
+        race.setNumberOfHorses(newNumberOfHorses);
+        raceListbox.setModel(raceListModelList);
+
+        //System.out.println("$$$$$$$$$$$$$$$$$$$$ Parent Race: "+race.getRaceId());
+        raceDetail.setRace(race);
+        raceService.updateRace(race);
+
+        saveRaceDetail.setDisabled(true);
+
+        raceDetailListModelList.add(raceDetail);
+
+        raceDetailSaved = true;
+        Clients.showNotification("Race Detail successfully saved ", null, null, null, 2000);
+
     }
 
-    private void refreshDetailView() {
-        //refresh the detail view of selected
-        if(selectedRaceDetail==null){
-            //clean
-            selectedHorseBlock.setVisible(false);
-            //selectedHorseCheck.setChecked(false);
-            selectedHorseID.setValue(null);
-            selectedHorseTrainer.setValue(null);
-            selectedHorseJockey.setValue(null);
-            //selectedHorseAge.setValue(null);
-            //selectedHorseDescription.setValue(null);
+    @Listen("onChanging = #horseIdInput")
+    public void enableSaveRaceDetailButton(){
+        newRaceDetail.setDisabled(false);
+        saveRaceDetail.setDisabled(false);
+    }
 
-        }else{
-            selectedHorseBlock.setVisible(true);
-            //selectedHorseCheck.setChecked(selectedHorse.isComplete());
-            selectedHorseID.setValue(selectedRaceDetail.getHorseId());
-            selectedHorseTrainer.setValue(selectedRaceDetail.getTrainer());
-            selectedHorseJockey.setValue(selectedRaceDetail.getJockey());
-            //selectedHorseAge.setValue(selectedHorse.getAge().toString());
-            //selectedHorseDescription.setValue(selectedRaceDetail.getDescription());
-
+    @Listen("onClick = #newRaceDetail")
+    public void newRaceDetail(){
+        if (!raceDetailSaved) {
+            Messagebox.show("Current Race Detail is not saved. Are you sure you want to discard it?",new Messagebox.Button[]{Messagebox.Button.YES, Messagebox.Button.NO},new org.zkoss.zk.ui.event.EventListener<Messagebox.ClickEvent>() {
+                @Override
+                public void onEvent(Messagebox.ClickEvent clickEvent) throws Exception {
+                    if(Messagebox.ON_YES == clickEvent.getName()){
+                        Executions.sendRedirect("//rbr/races/raceEntry-mvc.zul");
+                    }
+                    else if (Messagebox.ON_NO == clickEvent.getName()){
+                        return;
+                    }
+                }
+            });
         }
+        else{
+            Executions.sendRedirect("//rbr/races/raceEntry-mvc.zul");
+        }
+
     }
 
 }
