@@ -34,7 +34,7 @@
                         <listheader label="3rd Place Amount"/>
                         <listheader label="4th Place Amount"/>
                         <listheader label="Winner's win Amount"/>
-                        <listheader label="Delete Race"/>
+                        <!--<listheader label="Delete Race"/>-->
                     </listhead>
                     <template name="model">
                         <listitem sclass="selected-area" value="${each}">
@@ -71,9 +71,9 @@
                             <listcell>
                                 <label value="${each.winnersWinAmount}"/>
                             </listcell>
-                            <listcell>
-                                <button forward="onClick=raceListbox.onRaceDelete" image="/imgs/cross.png" width="36px"/>
-                            </listcell>
+                            <!--<listcell>-->
+                                <!--<button forward="onClick=raceListbox.onRaceDelete" image="/imgs/cross.png" width="36px"/>-->
+                            <!--</listcell>-->
                         </listitem>
                     </template>
                 </listbox>
@@ -88,7 +88,7 @@
                         <listheader label="Trainer"/>
                         <listheader label="Result Position"/>
                         <listheader label="Draw"/>
-                        <listheader label="Delete Race Detail(Horse)"/>
+                        <!--<listheader label="Delete Race Detail(Horse)"/>-->
                     </listhead>
                     <template name="model">
                         <listitem sclass="selected-area" value="${each}">
@@ -110,9 +110,9 @@
                             <listcell>
                                 <label value="${each.draw}"/>
                             </listcell>
-                            <listcell>
-                                <button forward="onClick=raceDetailsListbox.onRaceDetailDelete" image="/imgs/cross.png" width="36px"/>
-                            </listcell>
+                            <!--<listcell>-->
+                                <!--<button forward="onClick=raceDetailsListbox.onRaceDetailDelete" image="/imgs/cross.png" width="36px"/>-->
+                            <!--</listcell>-->
                         </listitem>
                     </template>
                 </listbox>

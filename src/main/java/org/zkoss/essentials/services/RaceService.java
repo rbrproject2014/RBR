@@ -28,4 +28,8 @@ public interface RaceService {
     public Race updateRace(Race race);
     public void deleteRace(Race race);
     public List<RaceDetail> getToBeRemovedRaceDetailList(RaceDetail raceDetail);
+
+    //hacks - need to revisit the code
+    public void deleteRaceDetail(RaceDetail raceDetail);
+    public RaceDetail saveRaceDetail(RaceDetail raceDetail);
 }

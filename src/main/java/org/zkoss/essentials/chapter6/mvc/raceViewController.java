@@ -83,9 +83,11 @@ public class raceViewController extends SelectorComposer<Component>{
         raceListModelList.remove(race);
         raceDetailListModelList.clear();
 
+        System.out.println(">>>>>>>>> Race to remove2:"+race.getRaceId());
+
         //ERROR
         //failed to lazily initialize a collection of role: org.zkoss.essentials.entity.Race.raceDetails, no session or session was closed
-        //raceService.deleteRace(race);
+        raceService.deleteRace(race);
 
     }
 

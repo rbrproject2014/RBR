@@ -155,7 +155,35 @@ public class raceEntryController extends SelectorComposer<Component>{
 
         //ERROR
         //failed to lazily initialize a collection of role: org.zkoss.essentials.entity.Race.raceDetails, no session or session was closed
+        raceService.deleteRace(race);
+        Clients.showNotification("Race successfully removed ", null, null, null, 2000);
+
+    }
+    //when user clicks the delete button of each race detail on the list
+    @Listen("onRaceDetailDelete = #raceDetailsListbox")
+    public void doRaceDetailDelete(ForwardEvent evt){
+        Button btn = (Button)evt.getOrigin().getTarget();
+        Listitem listitem = (Listitem)btn.getParent().getParent();
+
+        raceDetail = listitem.getValue();
+        System.out.println(">>>>>>>>> Race Detail to remove:"+raceDetail.getHorseId());
         //raceService.deleteRace(race);
+        //raceListModelList.addAll(raceService.getRaceList());
+        //raceListbox.setModel(raceListModelList);
+
+        raceDetailListModelList.remove(raceDetail);
+
+//      race = raceDetail.getRace();
+        race = raceListModelList.getSelection().iterator().next();
+        BigDecimal newNumberOfHorses = race.getNumberOfHorses().subtract(new BigDecimal(1));
+        race.setNumberOfHorses(newNumberOfHorses);
+        //ERROR
+        //failed to lazily initialize a collection of role: org.zkoss.essentials.entity.Race.raceDetails, no session or session was closed
+        raceService.deleteRaceDetail(raceDetail);
+
+        raceService.updateRace(race);
+        raceListbox.setModel(raceListModelList);
+        Clients.showNotification("Race Detail successfully removed ", null, null, null, 2000);
 
     }
 
@@ -216,14 +244,14 @@ public class raceEntryController extends SelectorComposer<Component>{
         raceDetail.setDraw(new BigDecimal(drawInput.getValue()));
 
         race = raceListModelList.getSelection().iterator().next();
-        BigDecimal newNumberOfHorses = new BigDecimal(0);
-        newNumberOfHorses = race.getNumberOfHorses().add(new BigDecimal(1));
+        BigDecimal newNumberOfHorses = race.getNumberOfHorses().add(new BigDecimal(1));
         race.setNumberOfHorses(newNumberOfHorses);
         raceListbox.setModel(raceListModelList);
 
         //System.out.println("$$$$$$$$$$$$$$$$$$$$ Parent Race: "+race.getRaceId());
         raceDetail.setRace(race);
         raceService.updateRace(race);
+        raceService.saveRaceDetail(raceDetail);
 
         saveRaceDetail.setDisabled(true);
 
@@ -236,6 +264,12 @@ public class raceEntryController extends SelectorComposer<Component>{
 
     @Listen("onChanging = #horseIdInput")
     public void enableSaveRaceDetailButton(){
+        if(raceListModelList.getSelection().isEmpty()){
+            Clients.showNotification("Please select Race to add Race Detail", null, null, null, 2000);
+            horseIdInput.setValue(null);
+            horseIdInput.setFocus(true);
+            return;
+        }
         newRaceDetail.setDisabled(false);
         saveRaceDetail.setDisabled(false);
     }

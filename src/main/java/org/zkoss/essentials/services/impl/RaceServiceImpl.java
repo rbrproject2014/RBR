@@ -77,12 +77,20 @@ public class RaceServiceImpl implements RaceService {
     @Transactional
     public Race saveRace(Race race) {
         raceDao.save(race);
-        Iterator<RaceDetail> iterator = race.getRaceDetails().iterator();
+        //Iterator<RaceDetail> iterator = race.getRaceDetails().iterator();
+        List<RaceDetail> raceDetails = getRaceDetailByRaceSerialNo(race.getRaceSerialNo());
+        Iterator<RaceDetail> iterator = raceDetails.iterator();
         while(iterator.hasNext()){
             RaceDetail raceDetail = iterator.next();
             raceDetailDao.save(raceDetail);
         }
         return race;
+    }
+
+    @Transactional
+    public RaceDetail saveRaceDetail(RaceDetail raceDetail){
+        raceDetailDao.save(raceDetail);
+        return raceDetail;
     }
 
     @Override
@@ -95,12 +103,19 @@ public class RaceServiceImpl implements RaceService {
     @Override
     @Transactional
     public void deleteRace(Race race) {
-        Iterator<RaceDetail> iterator = race.getRaceDetails().iterator();
+        // Iterator<RaceDetail> iterator = race.getRaceDetails().iterator();
+        List<RaceDetail> raceDetails = getRaceDetailByRaceSerialNo(race.getRaceSerialNo());
+        Iterator<RaceDetail> iterator = raceDetails.iterator();
         while (iterator.hasNext()){
             raceDetailDao.delete(iterator.next());
         }
 
         raceDao.delete(race);
 
+    }
+
+    @Transactional
+    public void deleteRaceDetail(RaceDetail raceDetail){
+        raceDetailDao.delete(raceDetail);
     }
 }

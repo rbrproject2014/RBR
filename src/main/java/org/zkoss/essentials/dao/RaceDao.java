@@ -59,6 +59,7 @@ public class RaceDao {
 
     public void delete(Race race){
         Race race1 = em.find(Race.class,race.getRaceSerialNo());
+        System.out.println("************* race to be deleted..."+race1.getRaceId());
         if(race1 != null){
             em.remove(race1);
         }
