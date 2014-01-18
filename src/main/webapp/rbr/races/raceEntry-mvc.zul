@@ -30,11 +30,11 @@
                             </row>
                             <row>
                                 <cell> </cell>
-                                <cell> <textbox id="raceIdInput" onOK="meetingPlaceInput.focus();"/></cell>
-                                <cell> <textbox id="meetingPlaceInput" onOK="dateInput.focus();"/></cell>
-                                <cell colspan="2">  <datebox id="dateInput" cols="20" format="dd/MM/yyyy"  onCreate="self.value = new Date()" onOK="noOfHorsesInput.focus()"/></cell>
+                                <cell> <textbox id="raceIdInput" constraint="no empty" onOK="meetingPlaceInput.focus();"/></cell>
+                                <cell> <textbox id="meetingPlaceInput" constraint="no empty" onOK="dateInput.focus();"/></cell>
+                                <cell colspan="2">  <datebox id="dateInput" constraint="no empty" cols="20" format="dd/MM/yyyy"  onCreate="self.value = new Date()" onOK="onePlaceAmountInput.focus()"/></cell>
 
-                                <cell> <intbox id="noOfHorsesInput" onOK="onePlaceAmountInput.focus();"></intbox> </cell>
+                                <cell> </cell>
                                 <cell> <intbox id="onePlaceAmountInput" onOK="twoPlaceAmountInput.focus();"></intbox> </cell>
                                 <cell> <intbox id="twoPlaceAmountInput" onOK="threePlaceAmountInput.focus();"></intbox> </cell>
                                 <cell> <intbox id="threePlaceAmountInput" onOK="fourPlaceAmountInput.focus();"></intbox> </cell>
@@ -120,11 +120,11 @@
                             </row>
                             <row>
                                 <cell> </cell>
-                                <cell> <textbox id="horseIdInput" onOK="jockeyInput.focus();"/></cell>
+                                <cell> <textbox id="horseIdInput" constraint="no empty" onOK="jockeyInput.focus();"/></cell>
                                 <cell> <textbox id="jockeyInput" onOK="trainerInput.focus();"/></cell>
                                 <cell> <textbox id="trainerInput" onOK="resultPositionInput.focus();"/></cell>
                                 <cell> <intbox id="resultPositionInput" onOK="drawInput.focus();"></intbox> </cell>
-                                <cell> <intbox id="drawInput" onOK="saveRaceDetail.focus();"></intbox> </cell>
+                                <cell> <intbox id="drawInput" constraint="no empty" onOK="saveRaceDetail.focus();"></intbox> </cell>
                                 <cell></cell>
                             </row>
                         </rows>

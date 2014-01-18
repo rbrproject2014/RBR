@@ -66,8 +66,6 @@ public class raceEntryController extends SelectorComposer<Component>{
     @Wire
     Listbox raceDetailsListbox;
     @Wire
-    Intbox noOfHorsesInput;
-    @Wire
     Intbox onePlaceAmountInput;
     @Wire
     Intbox twoPlaceAmountInput;
@@ -193,12 +191,12 @@ public class raceEntryController extends SelectorComposer<Component>{
         race.setMeetingPlace(meetingPlaceInput.getValue());
         race.setRaceDate(dateInput.getValue());
         race.setRaceTime(new Timestamp(dateInput.getValue().getTime()));
-        race.setNumberOfHorses(new BigDecimal(noOfHorsesInput.getValue()));
-        race.setFirstPlaceAmount(new BigDecimal(onePlaceAmountInput.getValue()));
-        race.setSecondPlaceAmount(new BigDecimal(twoPlaceAmountInput.getValue()));
-        race.setThirdPlaceAmount(new BigDecimal(threePlaceAmountInput.getValue()));
-        race.setFourthPlaceAmount(new BigDecimal(fourPlaceAmountInput.getValue()));
-        race.setWinnersWinAmount(new BigDecimal(winAmountInput.getValue()));
+        race.setNumberOfHorses(new BigDecimal(0));
+        race.setFirstPlaceAmount(onePlaceAmountInput.getValue()==null?null:new BigDecimal(onePlaceAmountInput.getValue()));
+        race.setSecondPlaceAmount(twoPlaceAmountInput.getValue()==null?null:new BigDecimal(twoPlaceAmountInput.getValue()));
+        race.setThirdPlaceAmount(threePlaceAmountInput.getValue()==null?null:new BigDecimal(threePlaceAmountInput.getValue()));
+        race.setFourthPlaceAmount(fourPlaceAmountInput.getValue()==null?null:new BigDecimal(fourPlaceAmountInput.getValue()));
+        race.setWinnersWinAmount(winAmountInput.getValue()==null?null:new BigDecimal(winAmountInput.getValue()));
         raceService.saveRace(race);
         saveRace.setDisabled(true);
         raceListModelList.add(race);
@@ -240,8 +238,8 @@ public class raceEntryController extends SelectorComposer<Component>{
         raceDetail.setHorseId(horseIdInput.getValue());
         raceDetail.setJockey(jockeyInput.getValue());
         raceDetail.setTrainer(trainerInput.getValue());
-        raceDetail.setResultPosition(new BigDecimal(resultPositionInput.getValue()));
-        raceDetail.setDraw(new BigDecimal(drawInput.getValue()));
+        raceDetail.setResultPosition(resultPositionInput.getValue()==null?null:new BigDecimal(resultPositionInput.getValue()));
+        raceDetail.setDraw(drawInput.getValue()==null?null:new BigDecimal(drawInput.getValue()));
 
         race = raceListModelList.getSelection().iterator().next();
         BigDecimal newNumberOfHorses = race.getNumberOfHorses().add(new BigDecimal(1));
@@ -282,6 +280,12 @@ public class raceEntryController extends SelectorComposer<Component>{
                 public void onEvent(Messagebox.ClickEvent clickEvent) throws Exception {
                     if(Messagebox.ON_YES == clickEvent.getName()){
                         Executions.sendRedirect("//rbr/races/raceEntry-mvc.zul");
+//                        horseIdInput.setValue(null);
+//                        jockeyInput.setValue(null);
+//                        trainerInput.setValue(null);
+//                        drawInput.setValue(null);
+//                        resultPositionInput.setValue(null);
+//                        horseIdInput.setFocus(true);
                     }
                     else if (Messagebox.ON_NO == clickEvent.getName()){
                         return;
@@ -291,6 +295,12 @@ public class raceEntryController extends SelectorComposer<Component>{
         }
         else{
             Executions.sendRedirect("//rbr/races/raceEntry-mvc.zul");
+//            horseIdInput.setValue(null);
+//            jockeyInput.setValue(null);
+//            trainerInput.setValue(null);
+//            drawInput.setValue(null);
+//            resultPositionInput.setValue(null);
+//            horseIdInput.setFocus(true);
         }
 
     }
